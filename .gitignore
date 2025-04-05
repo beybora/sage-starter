@@ -1,0 +1,50 @@
+# Node modules & Vite build
+node_modules/
+public/build/
+public/hot
+
+# Composer vendor
+vendor/
+
+# IDEs & System
+.DS_Store
+.idea/
+.vscode/
+
+
+# WordPress files and folders
+wp-activate.php
+wp-blog-header.php
+wp-comments-post.php
+wp-config-sample.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+xmlrpc.php
+wp-trackback.php
+wp-signup.php
+wp-settings.php
+wp-config.php
+
+# WordPress admin and includes
+wp-admin
+wp-includes
+
+# Environment files
+.env
+.env.*
+
+# WordPress uploads (media cache)
+wp-content/uploads/*
+!wp-content/uploads/.gitkeep
+
+# Local-only config
+wp-config.php
+wp-config-local.php
+wp-config-sample.php
+
+# Optional: Tests & logs
+*.log
+phpunit.xml

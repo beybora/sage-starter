@@ -1,0 +1,43 @@
+# Source maps, node stuff, local config
+node_modules/
+.env
+.env.*
+wp-config-sample.php
+wp-config-local.php
+wp-config.php
+
+# WordPress files and folders
+wp-activate.php
+wp-blog-header.php
+wp-comments-post.php
+wp-config-sample.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+xmlrpc.php
+wp-trackback.php
+wp-signup.php
+wp-settings.php
+wp-config.php
+wp-admin
+wp-includes
+
+# Build cache
+public/hot
+*.log
+
+# IDE & OS
+.DS_Store
+.idea/
+.vscode/
+
+# Dev-Tools & Tests
+phpunit.xml
+
+# Git & CI/CD intern
+.git
+.gitignore
+.github/
+.deployignore

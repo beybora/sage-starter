@@ -1,0 +1,11 @@
+name: sage-starter-theme
+recipe: wordpress
+config:
+  webroot: .
+  php: 8.3
+  composer_version: 2.7.6
+services:
+  node:
+    type: node:20
+env_file:
+    - .env
