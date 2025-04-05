@@ -14,9 +14,8 @@ export default defineConfig({
         'resources/css/editor.css',
         'resources/js/editor.js',
       ],
-      refresh: true,
+      refresh: ['resources/**/*', './**/*.php'],
     }),
-
     wordpressPlugin(),
 
     // Generate the theme.json file in the public/build/assets directory
