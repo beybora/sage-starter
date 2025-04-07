@@ -1,0 +1,27 @@
+/* resources/css/utilities/typography.css */
+
+/* Headings */
+.h1 { @apply text-4xl font-bold leading-tight tracking-tight; }
+.h2 { @apply text-3xl font-bold leading-snug; }
+.h3 { @apply text-2xl font-semibold leading-snug; }
+.h4 { @apply text-xl font-semibold; }
+.h5 { @apply text-lg font-medium; }
+.h6 { @apply text-base font-medium uppercase tracking-wide; }
+
+/* Paragraph */
+.paragraph { @apply text-base leading-relaxed text-gray-800; }
+
+/* Button Text */
+.button-text { @apply text-sm font-semibold uppercase tracking-wide no-underline; }
+
+/* Link Text */
+.link { @apply text-sm font-medium text-blue-600 no-underline hover:underline; }
+
+/* Navigation Link */
+.nav-link { @apply text-sm font-medium text-gray-700 no-underline hover:text-blue-600 transition-colors; }
+
+/* Subtitle */
+.subtitle { @apply text-sm text-gray-500 uppercase tracking-wide; }
+
+/* Above Title */
+.above-title { @apply text-xs text-gray-400 uppercase tracking-wider; }
