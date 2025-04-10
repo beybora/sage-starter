@@ -6,10 +6,24 @@
 	"title": "Cards",
 	"category": "widgets",
 	"icon": "smiley",
-	"description": "Example block scaffolded with Create Block tool.",
+	"description": "Section with up to 4 cards, each containing image/icon, title and description.",
+	"attributes": {
+	  "title": {
+		"type": "string",
+		"default": ""
+	  },
+	  "subtitle": {
+		"type": "string",
+		"default": ""
+	  },
+	  "cards": {
+		"type": "array",
+		"default": []
+	  }
+	},
 	"example": {},
 	"supports": {
-		"html": false
+	  "html": false
 	},
 	"textdomain": "custom-gutenberg-blocks",
 	"editorScript": "file:./index.js",
@@ -17,4 +31,4 @@
 	"style": "file:./style-index.css",
 	"render": "file:./render.php",
 	"viewScript": "file:./view.js"
-}
+  }
