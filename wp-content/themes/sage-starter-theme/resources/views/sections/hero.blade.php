@@ -7,7 +7,7 @@
 @endphp
 
 <section class="bg-gray-50 py-20">
-    <div class="max-w-screen-md mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
         {{-- Textbereich --}}
         <div class="space-y-6">
