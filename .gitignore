@@ -27,6 +27,7 @@ wp-trackback.php
 wp-signup.php
 wp-settings.php
 wp-config.php
+wp-content/cache/*
 
 # WordPress admin and includes
 wp-admin
@@ -48,3 +49,13 @@ wp-config-sample.php
 # Optional: Tests & logs
 *.log
 phpunit.xml
+
+# Gutenberg Block Plugin: Build files
+wp-content/plugins/custom-gutenberg-blocks/build/
+
+# Acorn Cache
+wp-content/cache/acorn/
+
+# Optional: Map files & build artifacts
+*.asset.php
+*.map
