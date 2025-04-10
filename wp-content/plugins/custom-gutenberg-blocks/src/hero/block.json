@@ -6,20 +6,32 @@
 	"title": "Hero Section",
 	"category": "widgets",
 	"icon": "smiley",
-	"description": "Example block scaffolded with Create Block tool.",
+	"description": "Flexible Hero Section with image and CTA.",
 	"attributes": {
-		"title": {
-			"type": "string",
-			"default": "This is the Hero Title"
-		},
-		"description": {
-			"type": "string",
-			"default": "This is the hero description text."
-		}
+	  "title": {
+		"type": "string",
+		"default": ""
+	  },
+	  "description": {
+		"type": "string",
+		"default": ""
+	  },
+	  "imageUrl": {
+		"type": "string",
+		"default": ""
+	  },
+	  "buttonText": {
+		"type": "string",
+		"default": ""
+	  },
+	  "buttonUrl": {
+		"type": "string",
+		"default": ""
+	  }
 	},
 	"example": {},
 	"supports": {
-		"html": false
+	  "html": false
 	},
 	"textdomain": "custom-gutenberg-blocks",
 	"editorScript": "file:./index.js",
@@ -27,4 +39,4 @@
 	"style": "file:./style-index.css",
 	"render": "file:./render.php",
 	"viewScript": "file:./view.js"
-}
+  }
