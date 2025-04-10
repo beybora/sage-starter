@@ -6,7 +6,7 @@
 @endphp
 
 <header class="bg-white shadow-sm">
-  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
 
       {{-- Logo --}}
