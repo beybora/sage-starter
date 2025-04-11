@@ -23,7 +23,7 @@
         </div>
 
         {{-- Bild --}}
-        <div class="flex justify-center md:justify-end">
+        <div class="flex justify-center">
             @if (!empty($imageUrl))
                 <img src="{{ $imageUrl }}" alt="{{ $title }}" class="w-[300px] h-[250px] object-cover rounded-md" />
             @else
