@@ -80,8 +80,13 @@ add_action('after_setup_theme', function () {
     ]);
 
     register_nav_menus([
-        'footer_navigation  ' => __('Footer Navigation', 'sage'),
+        'footer_navigation' => __('Footer Navigation', 'sage'),
     ]);
+
+    register_nav_menus([
+        'social_media_links' => __('Social Media Links', 'sage'),
+    ]);
+
 
 
     /**
