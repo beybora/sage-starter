@@ -24,13 +24,16 @@
                 </ul>
             </div>
 
-            {{-- Logo + Copyright --}}
+            {{-- Logo + Copyright + Social Icons --}}
             <div class="space-y-4 text-left md:text-right">
                 <div class="text-xl font-bold text-white">{{ $siteName }}</div>
                 <p class="text-white">
                     © {{ date('Y') }} {{ $siteName }}<br>
                     All rights reserved
                 </p>
+
+                {{-- Social Icons --}}
+                @include('partials.social-icons')
             </div>
 
         </div>
