@@ -1,55 +1,67 @@
 @php
-  $title = $attributes['title'] ?? '';
-  $subtitle = $attributes['subtitle'] ?? '';
-  $cards = $attributes['cards'] ?? [];
+    $title = $attributes['title'] ?? '';
+    $subtitle = $attributes['subtitle'] ?? '';
+    $cards = $attributes['cards'] ?? [];
 @endphp
 
-<section class="py-20 bg-gray-50">
-  <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<section class="py-20">
+    <div class="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        {{-- Grid --}}
+        <div class="grid md:grid-cols-2 gap-8">
+            {{-- Left Column --}}
+            <div class="lg:w-3/4">
+                @if (!empty($title))
+                    <h2 class="h2 dark:text-white">
+                        {{ $title }}
+                    </h2>
+                @endif
 
-    {{-- Section Heading --}}
-    @if (!empty($title))
-      <h2 class="h2 mb-2">{{ $title }}</h2>
-    @endif
+                @if (!empty($subtitle))
+                    <p class="mt-4 dark:text-neutral-400">
+                        {{ $subtitle }}
+                    </p>
+                @endif
+            </div>
+            {{-- End Left Column --}}
 
-    @if (!empty($subtitle))
-      <p class="subtitle mb-10">{{ $subtitle }}</p>
-    @endif
+            {{-- Right Column --}}
+            @if (!empty($cards))
+                <div class="space-y-6">
+                    @foreach ($cards as $card)
+                        @php
+                            $image = $card['imageUrl'] ?? null;
+                            $cardTitle = $card['title'] ?? '';
+                            $cardText = $card['description'] ?? '';
+                        @endphp
 
-    {{-- Cards --}}
-    @if (!empty($cards))
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        @foreach ($cards as $card)
-          @php
-            $image = $card['imageUrl'] ?? null;
-            $cardTitle = $card['title'] ?? '';
-            $cardText = $card['description'] ?? '';
-          @endphp
+                        <div class="flex items-start gap-4">
+                            {{-- Icon/Image --}}
+                            @if ($image)
+                                <div class="flex-shrink-0">
+                                    <img src="{{ $image }}" alt="{{ $cardTitle }}"
+                                        class="w-12 h-12 object-contain" />
+                                </div>
+                            @endif
 
-          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                            <div>
+                                {{-- Card Title --}}
+                                @if (!empty($cardTitle))
+                                    <h3 class="h5 dark:text-white">{{ $cardTitle }}</h3>
+                                @endif
 
-            {{-- Icon/Image --}}
-            @if ($image)
-              <div class="mb-4 flex justify-center">
-                <img src="{{ $image }}" alt="{{ $cardTitle }}" class="w-12 h-12 object-contain" />
-              </div>
+                                {{-- Card Text --}}
+                                @if (!empty($cardText))
+                                    <p class="mt-1 dark:text-neutral-400">
+                                        {{ $cardText }}
+                                    </p>
+                                @endif
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             @endif
-
-            {{-- Card Title --}}
-            @if (!empty($cardTitle))
-              <h3 class="h4 mb-2">{{ $cardTitle }}</h3>
-            @endif
-
-            {{-- Card Text --}}
-            @if (!empty($cardText))
-              <p class="paragraph text-sm text-gray-600">
-                {{ $cardText }}
-              </p>
-            @endif
-          </div>
-        @endforeach
-      </div>
-    @endif
-
-  </div>
+            {{-- End Right Column --}}
+        </div>
+        {{-- End Grid --}}
+    </div>
 </section>
