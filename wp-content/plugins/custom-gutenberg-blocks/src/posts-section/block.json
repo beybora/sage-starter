@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "custom-block/posts-section",
+	"version": "0.1.0",
+	"title": "Posts Section",
+	"category": "widgets",
+	"icon": "megaphone",
+	"description": "Section to display latest blog posts with a custom headline and subheadline.",
+	"attributes": {
+	  "headline": {
+		"type": "string",
+		"default": ""
+	  },
+	  "subheadline": {
+		"type": "string",
+		"default": ""
+	  }
+	},
+	"supports": {
+	  "html": false
+	},
+	"textdomain": "custom-gutenberg-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+  }

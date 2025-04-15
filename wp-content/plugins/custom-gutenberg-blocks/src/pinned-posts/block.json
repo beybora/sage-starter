@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "custom-block/pinned-posts",
+	"version": "0.1.0",
+	"title": "Pinned Posts",
+	"category": "widgets",
+	"icon": "star-filled",
+	"description": "Pin up to three selected posts to feature on your page.",
+	"attributes": {
+	  "pinnedPosts": {
+		"type": "array",
+		"default": []
+	  },
+	  "headline": {
+		"type": "string",
+		"default": "Pinned Posts"
+	  },
+	  "subheadline": {
+		"type": "string",
+		"default": ""
+	  },
+	  "maxPosts": {
+		"type": "number",
+		"default": 3
+	  }
+	},
+	"supports": {
+	  "html": false,
+	  "align": ["wide", "full"]
+	},
+	"textdomain": "custom-gutenberg-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+  }
