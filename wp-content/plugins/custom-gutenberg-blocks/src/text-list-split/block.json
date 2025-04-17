@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "custom-block/text-icon-split",
+	"name": "create-block/text-list-split",
 	"version": "0.1.0",
-	"title": "Text & Icon Split",
+	"title": "Cards",
 	"category": "widgets",
-	"icon": "text",
-	"description": "",
+	"icon": "smiley",
+	"description": "Section with up to 4 cards.",
 	"attributes": {
 	  "title": {
 		"type": "string",

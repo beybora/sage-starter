@@ -5,7 +5,7 @@
  * Passes all attributes and content to Blade view.
  */
 
-echo \Roots\view('sections.cards-grid', [
-  'attributes' => $attributes ?? [],
-  'content'    => $content ?? '',
+echo \Roots\view('sections.text-list-split', [
+	'attributes' => $attributes ?? [],
+	'content'    => $content ?? '',
 ])->render();
