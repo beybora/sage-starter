@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "custom-block/image-text-split",
+	"version": "0.1.0",
+	"title": "Image & Text Split",
+	"category": "layout",
+	"icon": "align-pull-left",
+	"description": "Zeigt ein Bild auf der linken Seite mit Überschrift, Text und Call-to-Action auf der rechten Seite.",
+	"keywords": ["image", "text", "split", "cta", "layout"],
+	"attributes": {
+	  "imageUrl": {
+		"type": "string",
+		"default": ""
+	  },
+	  "headline": {
+		"type": "string",
+		"default": ""
+	  },
+	  "description": {
+		"type": "string",
+		"default": ""
+	  },
+	  "ctaText": {
+		"type": "string",
+		"default": ""
+	  },
+	  "ctaUrl": {
+		"type": "string",
+		"default": ""
+	  }
+	},
+	"supports": {
+	  "html": false,
+	  "align": ["wide", "full"]
+	},
+	"textdomain": "custom-gutenberg-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+  }
