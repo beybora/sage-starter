@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "custom-block/upcoming-events",
+	"title": "Upcoming Events",
+	"category": "theme",
+	"icon": "calendar",
+	"description": "Displays a list of upcoming events.",
+	"attributes": {
+	  "headline": {
+		"type": "string",
+		"default": ""
+	  },
+	  "subheadline": {
+		"type": "string",
+		"default": ""
+	  }
+	},
+	"supports": {
+	  "html": false
+	},
+	"textdomain": "custom-gutenberg-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+  }
