@@ -1,5 +1,5 @@
 <section class="latest-posts py-20 bg-white">
-    <div class="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Headline --}}
         @if (!empty($headline))
             <h2 class="h2 mb-2">{{ $headline }}</h2>
