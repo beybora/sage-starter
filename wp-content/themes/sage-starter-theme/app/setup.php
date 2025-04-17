@@ -163,3 +163,11 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer',
     ] + $config);
 });
+
+/**
+ * Register custom blocks
+ *
+ * @return void
+ */
+
+require_once get_theme_file_path('app/PostTypes/event.php');
