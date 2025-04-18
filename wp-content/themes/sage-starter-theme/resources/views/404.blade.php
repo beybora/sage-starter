@@ -1,13 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-  @include('partials.page-header')
+    <section class="container mx-auto py-20 text-center">
+        <h1 class="text-4xl font-bold mb-4">404 – Seite nicht gefunden</h1>
+        <p class="text-gray-600 text-lg mb-8">
+            Die angeforderte Seite existiert nicht oder wurde verschoben.
+        </p>
 
-  @if (! have_posts())
-    <x-alert type="warning">
-      {!! __('Sorry, but the page you are trying to view does not exist.', 'sage') !!}
-    </x-alert>
-
-    {!! get_search_form(false) !!}
-  @endif
+        <a href="{{ home_url() }}" class="inline-block bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition">
+            Zur Startseite
+        </a>
+    </section>
 @endsection
