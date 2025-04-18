@@ -6,7 +6,7 @@
 	"title": "Latest Posts Section",
 	"category": "widgets",
 	"icon": "megaphone",
-	"description": "Section to display latest blog posts with a custom headline and subheadline.",
+	"description": "Section to display latest posts with a custom headline and subheadline.",
 	"attributes": {
 	  "headline": {
 		"type": "string",
@@ -15,6 +15,10 @@
 	  "subheadline": {
 		"type": "string",
 		"default": ""
+	  },
+	  "postType": {
+		"type": "string",
+		"default": "post"
 	  }
 	},
 	"supports": {

@@ -1,18 +1,19 @@
 <?php
 
-$attributes = $attributes ?? [];
+$attributes    = $attributes ?? [];
+$headline      = $attributes['headline'] ?? '';
+$subheadline   = $attributes['subheadline'] ?? '';
+$post_type     = $attributes['postType'] ?? 'post';
 
-$headline = $attributes['headline'] ?? '';
-$subheadline = $attributes['subheadline'] ?? '';
-
-// Fetch latest 3 posts
 $latest_posts = get_posts([
-    'numberposts' => 3,
-    'post_status' => 'publish',
+	'post_type'      => $post_type,
+	'posts_per_page' => 3,
+	'post_status'    => 'publish',
 ]);
 
 echo \Roots\view('sections.latest-posts', compact(
-    'headline',
-    'subheadline',
-    'latest_posts'
+	'headline',
+	'subheadline',
+	'post_type',
+	'latest_posts'
 ))->render();

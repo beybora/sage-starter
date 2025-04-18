@@ -1,8 +1,14 @@
 import { useBlockProps, RichText, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, TextControl } from '@wordpress/components';
+import { PanelBody, TextControl, SelectControl } from '@wordpress/components';
+
+const postTypes = [
+	{ label: 'Blogposts', value: 'post' },
+	{ label: 'Pressemitteilungen', value: 'press_release' },
+	{ label: 'Events', value: 'event' },
+];
 
 export default function Edit({ attributes, setAttributes }) {
-	const { headline, subheadline } = attributes;
+	const { headline, subheadline, postType } = attributes;
 
 	return (
 		<>
@@ -17,6 +23,12 @@ export default function Edit({ attributes, setAttributes }) {
 						label="Subheadline"
 						value={subheadline}
 						onChange={(val) => setAttributes({ subheadline: val })}
+					/>
+					<SelectControl
+						label="Post Type"
+						value={postType}
+						options={postTypes}
+						onChange={(val) => setAttributes({ postType: val })}
 					/>
 				</PanelBody>
 			</InspectorControls>
