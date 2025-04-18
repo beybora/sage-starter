@@ -16,6 +16,7 @@ add_action('init', function () {
         'menu_icon' => 'dashicons-calendar',
         'supports' => ['title'],
         'show_in_rest' => true,
+        'show_in_nav_menus'  => true,
         'rewrite' => [
             'slug' => 'upcoming-event',
             'with_front' => true

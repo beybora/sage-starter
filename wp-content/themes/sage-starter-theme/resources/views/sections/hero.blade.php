@@ -7,7 +7,7 @@
 @endphp
 
 <section class="hero bg-neutral-900 py-20">
-    <div class="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             {{-- Text Content --}}
             <div class="text-left md:text-left">

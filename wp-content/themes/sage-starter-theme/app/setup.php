@@ -171,3 +171,4 @@ add_action('widgets_init', function () {
  */
 
 require_once get_theme_file_path('app/PostTypes/event.php');
+require_once get_theme_file_path('app/PostTypes/press-release.php');
