@@ -4,20 +4,20 @@ $subtitle = $attributes['subtitle'] ?? '';
 $cards = $attributes['cards'] ?? [];
 @endphp
 
-<section class="text-icon-split py-20">
-  <div class="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="text-list-split section-spacing bg-surface">
+  <div class="container-layout">
+
     {{-- Flex Container --}}
     <div class="flex flex-col md:flex-row gap-10">
+
       {{-- Left Column --}}
       <div class="md:w-1/2 lg:w-2/5">
         @if (!empty($title))
-        <h2 class="h2 dark:text-white">
-          {{ $title }}
-        </h2>
+        <h2 class="h2">{{ $title }}</h2>
         @endif
 
         @if (!empty($subtitle))
-        <p class="mt-4 dark:text-neutral-400">
+        <p class="mt-4 text-base leading-relaxed text-muted">
           {{ $subtitle }}
         </p>
         @endif
@@ -38,20 +38,18 @@ $cards = $attributes['cards'] ?? [];
           {{-- Icon/Image --}}
           @if ($image)
           <div class="flex-shrink-0">
-            <img src="{{ $image }}" alt="{{ $cardTitle }}"
-              class="w-12 h-12 object-contain" />
+            <img src="{{ $image }}" alt="{{ $cardTitle }}" class="w-12 h-12 object-contain" />
           </div>
           @endif
 
+          {{-- Card Content --}}
           <div class="flex-grow">
-            {{-- Card Title --}}
             @if (!empty($cardTitle))
-            <h3 class="h5 dark:text-white">{{ $cardTitle }}</h3>
+            <h3 class="h5">{{ $cardTitle }}</h3>
             @endif
 
-            {{-- Card Text --}}
             @if (!empty($cardText))
-            <p class="mt-1 dark:text-neutral-400">
+            <p class="mt-1 text-base leading-relaxed text-muted">
               {{ $cardText }}
             </p>
             @endif
@@ -63,5 +61,6 @@ $cards = $attributes['cards'] ?? [];
       {{-- End Right Column --}}
     </div>
     {{-- End Flex Container --}}
+
   </div>
 </section>

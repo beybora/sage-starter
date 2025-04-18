@@ -1,17 +1,19 @@
 @props([
     'href' => '#',
-    'variant' => 'primary', // primary, secondary, ghost, etc.
-    'size' => 'md', // sm, md, lg
+    'variant' => 'primary',
+    'size' => 'md',
 ])
 
 @php
     $base =
-        'inline-block font-semibold rounded-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
+        'inline-block font-semibold rounded-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 button-text';
+
     $variants = [
-        'primary' => 'bg-primary text-white hover:bg-primary-dark',
-        'secondary' => 'bg-red-100 text-red-800 hover:bg-red-200',
-        'ghost' => 'bg-transparent text-red-700 hover:text-primary',
+        'primary' => 'bg-primary text-white hover:bg-primary/90',
+        'secondary' => 'bg-surface text-primary border border-primary hover:bg-primary hover:text-white',
+        'ghost' => 'bg-transparent text-primary hover:underline',
     ];
+
     $sizes = [
         'sm' => 'px-3 py-1.5 text-sm',
         'md' => 'px-4 py-2 text-base',
@@ -20,6 +22,6 @@
 @endphp
 
 <a href="{{ $href }}"
-    class="{{ $base }} {{ $variants[$variant] ?? $variants['primary'] }} {{ $sizes[$size] ?? $sizes['md'] }}">
+    class="text-dark {{ $base }} {{ $variants[$variant] ?? $variants['primary'] }} {{ $sizes[$size] ?? $sizes['md'] }}">
     {{ $slot }}
 </a>

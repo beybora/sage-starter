@@ -1,0 +1,18 @@
+/* resources/css/utilities/colors.css */
+
+/* === Farben === */
+.text-primary { @apply text-[#E30C17]; }
+.bg-primary   { @apply bg-[#E30C17]; }
+
+.text-accent  { @apply text-[#053D5D]; }
+.bg-accent    { @apply bg-[#053D5D]; }
+
+.text-muted   { @apply text-[#888]; }
+
+.text-dark    { @apply text-[#1A1A1A]; }
+.bg-dark      { @apply bg-[#1A1A1A]; }
+
+.bg-surface   { @apply bg-[#FAFAFA]; }
+
+.text-body  {  @apply text-[#1A1A1A]; }
+

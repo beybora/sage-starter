@@ -1,36 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="bg-white py-20">
-        <div class="container max-w-5xl mx-auto px-6">
-            {{-- Titel (ACF oder Fallback) --}}
-            <h1 class="text-3xl font-bold mb-4">
+    <section class="bg-white section-spacing">
+        <div class="container-layout">
+
+            {{-- Headline (ACF-Feld oder Fallback auf Titel) --}}
+            <h1 class="h1 mb-4">
                 {{ get_field('press_title') ?: get_the_title() }}
             </h1>
 
-            {{-- Untertitel --}}
+            {{-- Subheadline --}}
             @if ($subtitle = get_field('press_subtitle'))
-                <p class="text-lg text-gray-600 mb-6">{{ $subtitle }}</p>
+                <p class="paragraph mb-6 text-muted">
+                    {{ $subtitle }}
+                </p>
             @endif
 
-            {{-- Beitragsbild --}}
+            {{-- Featured Image --}}
             @if (has_post_thumbnail())
-                <div class="mb-6">
+                <div class="mb-8">
                     {!! get_the_post_thumbnail(null, 'large', ['class' => 'rounded-lg w-full']) !!}
                 </div>
             @endif
 
-            {{-- Textfeld (ACF WYSIWYG) --}}
+            {{-- Press Text --}}
             @if ($text = get_field('press_text'))
-                <div class="prose max-w-none">
+                <div class="prose max-w-none text-body">
                     {!! $text !!}
                 </div>
             @else
-                {{-- Fallback: normalen Content anzeigen --}}
-                <div class="prose max-w-none">
+                {{-- Fallback: normaler Content --}}
+                <div class="prose max-w-none text-body">
                     {!! nl2br(get_the_content()) !!}
                 </div>
             @endif
+
         </div>
     </section>
 @endsection

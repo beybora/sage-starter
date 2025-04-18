@@ -1,4 +1,4 @@
-// filepath: /Users/borabey/Local Sites/Serious Projects/sage-starter-theme/wp-content/themes/sage-starter-theme/tailwind.config.js
+// tailwind.config.js
 export default {
   content: [
     './app/**/*.php',
@@ -8,8 +8,20 @@ export default {
     './single.php',
     './404.php',
   ],
+  safelist: [
+    'text-dark', 'text-muted', 'text-body',
+    'bg-surface', 'text-primary', 'text-accent',
+  ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#E30C17',        // Rot für Hauptaktionen
+        accent: '#053D5D',         // Dunkelblau für Headlines/Links
+        muted: '#888888',          // Subtext/Fußnoten
+        dark: '#1A1A1A',           // Text/Fokusinhalt
+        surface: '#FAFAFA',        // Hintergrund-Flächen
+      }
+    },
   },
   plugins: [],
 }

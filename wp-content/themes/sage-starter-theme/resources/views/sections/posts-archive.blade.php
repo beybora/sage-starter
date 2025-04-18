@@ -1,5 +1,5 @@
-<section class="posts-archive py-20 bg-gray-50">
-    <div class="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="posts-archive section-spacing bg-surface">
+    <div class="container-layout">
 
         {{-- Headline --}}
         @if (!empty($headline))
@@ -16,7 +16,7 @@
             @forelse ($posts as $post)
                 <x-post-card :post="$post" />
             @empty
-                <p class="col-span-3 text-gray-500 text-center">
+                <p class="col-span-3 text-muted text-center">
                     {{ __('No blog posts found.', 'textdomain') }}
                 </p>
             @endforelse

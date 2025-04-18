@@ -1,36 +1,94 @@
-/* resources/css/utilities/typography.css */
+/* === Headings === */
+.h1 {
+  @apply text-4xl font-bold leading-tight tracking-tight;
+  color: #1A1A1A;
+}
+.h2 {
+  @apply text-3xl font-bold leading-snug;
+  color: #1A1A1A;
+}
+.h3 {
+  @apply text-2xl font-semibold leading-snug;
+  color: #1A1A1A;
+}
+.h4 {
+  @apply text-xl font-semibold;
+  color: #1A1A1A;
+}
+.h5 {
+  @apply text-lg font-medium;
+  color: #1A1A1A;
+}
+.h6 {
+  @apply text-base font-medium uppercase tracking-wide;
+  color: #888888;
+}
 
-/* Headings */
-.h1 { @apply text-4xl font-bold leading-tight tracking-tight; }
-.h2 { @apply text-3xl font-bold leading-snug; }
-.h3 { @apply text-2xl font-semibold leading-snug; }
-.h4 { @apply text-xl font-semibold; }
-.h5 { @apply text-lg font-medium; }
-.h6 { @apply text-base font-medium uppercase tracking-wide; }
+/* === Native Headings === */
+h1 {
+  @apply text-4xl font-bold leading-tight tracking-tight;
+  color: #1A1A1A;
+}
+h2 {
+  @apply text-3xl font-bold leading-snug;
+  color: #1A1A1A;
+}
+h3 {
+  @apply text-2xl font-semibold leading-snug;
+  color: #1A1A1A;
+}
+h4 {
+  @apply text-xl font-semibold;
+  color: #1A1A1A;
+}
+h5 {
+  @apply text-lg font-medium;
+  color: #1A1A1A;
+}
+h6 {
+  @apply text-base font-medium uppercase tracking-wide;
+  color: #888888;
+}
 
-/* Headings */
-h1 { @apply text-4xl font-bold leading-tight tracking-tight; }
-h2 { @apply text-3xl font-bold leading-snug; }
-h3 { @apply text-2xl font-semibold leading-snug; }
-h4 { @apply text-xl font-semibold; }
-h5 { @apply text-lg font-medium; }
-h6 { @apply text-base font-medium uppercase tracking-wide; }
+/* === Paragraphs === */
+.paragraph {
+  @apply text-base leading-relaxed;
+  color: #1A1A1A;
+}
+p {
+  @apply text-base leading-relaxed;
+  color: #1A1A1A;
+}
 
-/* Paragraph */
-.paragraph { @apply text-base leading-relaxed text-gray-800; }
-p { @apply text-base leading-relaxed text-gray-800; }
+/* === Button Text === */
+.button-text {
+  @apply text-sm font-semibold uppercase tracking-wide no-underline;
+  color: #1A1A1A;
+}
 
-/* Button Text */
-.button-text { @apply text-sm font-semibold uppercase tracking-wide no-underline; }
+/* === Link Text === */
+.link {
+  @apply text-sm font-medium no-underline hover:underline;
+  color: #053D5D;
+}
 
-/* Link Text */
-.link { @apply text-sm font-medium text-blue-600 no-underline hover:underline; }
+/* === Navigation Link === */
+.nav-link {
+  @apply text-sm font-medium no-underline transition-colors;
+  color: #888888;
+}
+.nav-link:hover {
+  color: #053D5D;
+}
 
-/* Navigation Link */
-.nav-link { @apply text-sm font-medium text-gray-700 no-underline hover:text-blue-600 transition-colors; }
+/* === Subtitle === */
+.subtitle {
+  @apply text-sm uppercase tracking-wide;
+  color: #888888;
+}
 
-/* Subtitle */
-.subtitle { @apply text-sm text-gray-500 uppercase tracking-wide; }
-
-/* Above Title */
-.above-title { @apply text-xs text-gray-400 uppercase tracking-wider; }
+/* === Above Title === */
+.above-title {
+  @apply text-xs uppercase tracking-wider;
+  color: #888888;
+}

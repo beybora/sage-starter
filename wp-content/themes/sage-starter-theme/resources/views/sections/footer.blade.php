@@ -1,5 +1,5 @@
-<footer class="bg-gray-900 text-gray-300 py-12">
-    <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
+<footer class="bg-dark text-muted section-spacing">
+    <div class="container-layout">
         <div class="flex flex-col md:flex-row justify-between gap-10 items-start">
 
             {{-- Main Navigation --}}

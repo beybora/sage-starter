@@ -5,31 +5,27 @@
     $current_url = url()->current();
 @endphp
 
-<header class="header bg-white shadow-sm">
-    <div class="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<header class="bg-white shadow-sm">
+    <div class="container-layout">
         <div class="flex items-center justify-between h-20">
 
             {{-- Logo --}}
             <a href="{{ home_url('/') }}"
-                class="text-xl font-bold text-primary hover:text-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 no-underline"
+                class="text-xl font-bold text-primary no-underline hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 aria-label="{{ __('Homepage', 'sage') }}">
                 {{ $siteName }}
             </a>
 
-            {{-- Navigation & CTA --}}
-            <div class="flex items-center gap-8">
-                {{-- Navigation --}}
-                <nav class="flex items-center gap-6" role="navigation" aria-label="{{ __('Main navigation', 'sage') }}">
-                    @foreach ($menu as $item)
-                        <a href="{{ $item->url }}"
-                            class="nav-link @if ($item->url === $current_url) text-primary font-semibold @endif"
-                            @if ($item->url === $current_url) aria-current="page" @endif>
-                            {{ $item->title }}
-                        </a>
-                    @endforeach
-                </nav>
-
-            </div>
+            {{-- Navigation --}}
+            <nav class="flex items-center gap-6" role="navigation" aria-label="{{ __('Main navigation', 'sage') }}">
+                @foreach ($menu as $item)
+                    <a href="{{ $item->url }}"
+                        class="nav-link @if ($item->url === $current_url) font-semibold text-primary @endif"
+                        @if ($item->url === $current_url) aria-current="page" @endif>
+                        {{ $item->title }}
+                    </a>
+                @endforeach
+            </nav>
 
         </div>
     </div>
