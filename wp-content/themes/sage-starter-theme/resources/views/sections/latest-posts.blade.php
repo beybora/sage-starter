@@ -1,14 +1,16 @@
 <section class="latest-posts py-20 bg-white">
     <div class="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        {{-- Headline --}}
-        @if (!empty($headline))
-            <h2 class="h2 mb-2">{{ $headline }}</h2>
-        @endif
 
-        {{-- Subheadline --}}
-        @if (!empty($subheadline))
-            <p class="subtitle mb-10">{{ $subheadline }}</p>
-        @endif
+        {{-- Headline and Subheadline --}}
+        <div class="mb-10 text-center">
+            @if (!empty($headline))
+                <h2 class="h2 mb-2">{{ $headline }}</h2>
+            @endif
+
+            @if (!empty($subheadline))
+                <p class="subtitle">{{ $subheadline }}</p>
+            @endif
+        </div>
 
         {{-- Grid --}}
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
@@ -45,6 +47,5 @@
                 <p class="col-span-3 text-gray-500">{{ __('No posts found.', 'textdomain') }}</p>
             @endforelse
         </div>
-
     </div>
 </section>
