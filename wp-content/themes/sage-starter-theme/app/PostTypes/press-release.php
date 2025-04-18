@@ -1,7 +1,7 @@
 <?php
 
 add_action('init', function () {
-    register_post_type('press-release', [
+    register_post_type('press_release', [
         'labels' => [
             'name' => 'Press Releases',
             'singular_name' => 'Press Release',
@@ -18,7 +18,7 @@ add_action('init', function () {
         'show_in_rest' => true,
         'show_in_nav_menus'  => true,
         'rewrite' => [
-            'slug' => 'press-releases',
+            'slug' => 'press-release',
             'with_front' => true
         ],
     ]);
