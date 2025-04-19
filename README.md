@@ -1,6 +1,6 @@
 # Sage Starter Theme by Bora Bey Sarikaya
 
-Note: This project uses [Lando](https://lando.dev) for local development. If you don't want to use Lando, you can still set up WordPress manually with your own local server stack (e.g. MAMP, XAMPP, Laravel Valet).
+Note: This project uses [Lando](https://lando.dev) for local development. If you don't want to use Lando, you can still set up WordPress manually with your own local server stack.
 
 A clean and simple WordPress theme setup using classic structure (no Bedrock), with:
 
@@ -56,14 +56,14 @@ cd wp-content/themes/sage-starter-theme
 ### 2. Install Composer dependencies
 
 ```bash
-lando composer install
+composer install
 ```
 
 ### 3. Install JS dependencies and build assets
 
 ```bash
-lando npm install
-lando npm run build
+npm install
+npm run build
 ```
 
 After building assets, run:
@@ -84,15 +84,11 @@ lando wp theme activate sage-starter-theme
 
 ## What does what? (Composer, npm, Vite)
 
-To clarify the tools this theme uses:
-
-| Tool     | Purpose                               | Command                  |
-|----------|----------------------------------------|--------------------------|
-| Composer | Handles PHP dependencies like Acorn    | `lando composer install` |
-| npm      | Handles JavaScript packages and build  | `lando npm install`      |
-| Vite     | Fast build tool for assets (JS/CSS)    | `lando npm run build`    |
-
-You don’t need `yarn` – this setup uses `npm` by default.
+| Tool     | Purpose                               | Command            |
+| -------- | ------------------------------------- | ------------------ |
+| Composer | Handles PHP dependencies like Acorn   | `composer install` |
+| npm      | Handles JavaScript packages and build | `npm install`      |
+| Vite     | Fast build tool for assets (JS/CSS)   | `npm run build`    |
 
 ---
 
@@ -115,6 +111,8 @@ This will apply the new configuration properly.
 ├── wp-content
 │   ├── themes
 │   │   └── sage-starter-theme
+│   ├── plugins
+│   │   └── custom-gutenberg-blocks
 │   └── uploads/.gitkeep
 ├── .lando.yml
 ├── .gitignore
@@ -122,4 +120,80 @@ This will apply the new configuration properly.
 └── README.md
 ```
 
+---
 
+## Custom Gutenberg Blocks
+
+This theme includes support for custom Gutenberg blocks via a plugin (`wp-content/plugins/custom-gutenberg-blocks`). Each block is structured as follows:
+
+```text
+custom-gutenberg-blocks/
+├── blocks/
+│   └── my-block/
+│       ├── block.json
+│       ├── index.js
+│       ├── edit.js
+│       ├── render.php
+│       └── styles.css
+```
+
+### Build the blocks
+
+Blocks must be compiled before deployment:
+
+```bash
+cd wp-content/plugins/custom-gutenberg-blocks
+npm install
+npm run build
+```
+
+Include this step in your deploy workflow if needed.
+
+---
+
+## Custom Post Types (CPT)
+
+This theme supports custom post types (registered in `app/PostTypes/`). Example: `press_release`.
+
+```php
+register_post_type('press_release', [
+    'labels' => [
+        'name' => 'Press Releases',
+        'singular_name' => 'Press Release',
+    ],
+    'public' => true,
+    'has_archive' => true,
+    'supports' => ['title', 'editor', 'thumbnail'],
+    'show_in_rest' => true,
+]);
+```
+
+---
+
+## Deployment Strategy
+
+I recommend deploying only your `wp-content/` folder via rsync/GitHub Actions and leaving core WordPress files on the server. This avoids overwriting settings, plugins or uploads.
+
+Use a `.deployignore` file to control what gets deployed. You can safely exclude files like:
+
+```text
+node_modules/
+public/build/
+vendor/
+*.log
+*.map
+*.asset.php
+```
+
+Your GitHub Action should install Composer + npm dependencies in the theme folder, build assets, and deploy using rsync.
+See `/.github/workflows/deploy.yml` for a working example.
+
+---
+
+## License & Credits
+
+Forked and inspired by the Roots stack (https://roots.io/sage/)
+
+You’re free to use this as a base for your own theme.
+
+Built and maintained by Bora Bey Sarikaya
