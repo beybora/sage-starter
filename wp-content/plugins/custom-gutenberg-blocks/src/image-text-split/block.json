@@ -9,26 +9,12 @@
 	"description": "Zeigt ein Bild auf der linken Seite mit Überschrift, Text und Call-to-Action auf der rechten Seite.",
 	"keywords": ["image", "text", "split", "cta", "layout"],
 	"attributes": {
-	  "imageUrl": {
-		"type": "string",
-		"default": ""
-	  },
-	  "headline": {
-		"type": "string",
-		"default": ""
-	  },
-	  "description": {
-		"type": "string",
-		"default": ""
-	  },
-	  "ctaText": {
-		"type": "string",
-		"default": ""
-	  },
-	  "ctaUrl": {
-		"type": "string",
-		"default": ""
-	  }
+	  "imageUrl": { "type": "string", "default": "" },
+	  "headline": { "type": "string", "default": "" },
+	  "description": { "type": "string", "default": "" },
+	  "ctaText": { "type": "string", "default": "" },
+	  "ctaUrl": { "type": "string", "default": "" },
+	  "variant": { "type": "string", "default": "dark" }
 	},
 	"supports": {
 	  "html": false,

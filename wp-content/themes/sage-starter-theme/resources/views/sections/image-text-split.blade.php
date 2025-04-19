@@ -16,10 +16,10 @@
             <div class="flex justify-center md:justify-start md:w-1/2">
                 @if (!empty($imageUrl))
                     <img src="{{ esc_url($imageUrl) }}" alt="{{ $headline }}"
-                        class="w-full max-w-md h-auto aspect-video object-cover rounded-xl shadow border" />
+                        class="w-full max-w-md h-auto aspect-video object-cover shadow" />
                 @else
                     <div
-                        class="w-full max-w-md h-[250px] bg-dark rounded-lg flex items-center justify-center text-sm {{ $mutedColor }} border">
+                        class="w-full max-w-md h-[250px] bg-dark flex items-center justify-center text-sm {{ $mutedColor }} border">
                         {{ __('No Image Provided', 'custom-gutenberg-blocks') }}
                     </div>
                 @endif
