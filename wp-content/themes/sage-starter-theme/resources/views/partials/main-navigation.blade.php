@@ -11,7 +11,7 @@
     <ul class="space-y-2 flex flex-row gap-5">
         @foreach ($menu_items as $item)
             <li>
-                <a href="{{ $item->url }}" class="link text-white hover:text-white">
+                <a href="{{ $item->url }}" class="nav-link hover:text-accent">
                     {{ $item->title }}
                 </a>
             </li>

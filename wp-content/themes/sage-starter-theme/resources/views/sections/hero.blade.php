@@ -8,7 +8,20 @@
 
 <section class="hero bg-surface section-spacing">
     <div class="container-layout">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-15 items-center">
+
+            {{-- Image --}}
+            <div class="flex justify-center">
+                @if (!empty($imageUrl))
+                    <img src="{{ $imageUrl }}" alt="{{ $title }}"
+                        class="w-full max-w-md h-auto object-cover rounded-md" />
+                @else
+                    <div
+                        class="w-full max-w-md h-64 bg-dark rounded-md flex items-center justify-center text-muted text-sm">
+                        Bild-Platzhalter
+                    </div>
+                @endif
+            </div>
 
             {{-- Text Content --}}
             <div class="text-left">
@@ -27,18 +40,6 @@
                 @endif
             </div>
 
-            {{-- Image --}}
-            <div class="flex justify-center">
-                @if (!empty($imageUrl))
-                    <img src="{{ $imageUrl }}" alt="{{ $title }}"
-                        class="w-full max-w-md h-auto object-cover rounded-md" />
-                @else
-                    <div
-                        class="w-full max-w-md h-64 bg-dark rounded-md flex items-center justify-center text-muted text-sm">
-                        Bild-Platzhalter
-                    </div>
-                @endif
-            </div>
         </div>
     </div>
 </section>
