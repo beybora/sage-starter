@@ -6,15 +6,14 @@
     $buttonUrl = $buttonUrl ?? '#';
 @endphp
 
-<section class="hero bg-surface section-spacing">
+<section class="hero bg-surface hero-spacing">
     <div class="container-layout">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-15 items-center">
 
             {{-- Image --}}
             <div class="flex justify-center">
                 @if (!empty($imageUrl))
-                    <img src="{{ $imageUrl }}" alt="{{ $title }}"
-                        class="w-full max-w-md h-auto object-cover rounded-md" />
+                    <img src="{{ $imageUrl }}" alt="{{ $title }}" class="w-full max-w-md h-auto object-cover" />
                 @else
                     <div
                         class="w-full max-w-md h-64 bg-dark rounded-md flex items-center justify-center text-muted text-sm">

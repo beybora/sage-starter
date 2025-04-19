@@ -1,7 +1,7 @@
 @php
     $sectionClass = $variant === 'dark' ? 'bg-primary text-white' : 'bg-surface text-dark';
     $textColor = $variant === 'dark' ? 'text-white' : 'text-dark';
-    $mutedColor = $variant === 'dark' ? 'text-muted' : 'text-muted';
+    $mutedColor = $variant === 'dark' ? 'text-white' : 'text-white';
 @endphp
 
 <section class="text-list-split section-spacing {{ $sectionClass }}">
@@ -24,7 +24,7 @@
                     @foreach ($cards as $card)
                         <div class="border-l-4 border-primary pl-4">
                             @if (!empty($card['title']))
-                                <h3 class="h5 {{ $textColor }}">{{ $card['title'] }}</h3>
+                                <h3 class="h4 {{ $textColor }}">{{ $card['title'] }}</h3>
                             @endif
                             @if (!empty($card['description']))
                                 <p class="mt-1 text-base leading-relaxed {{ $mutedColor }}">

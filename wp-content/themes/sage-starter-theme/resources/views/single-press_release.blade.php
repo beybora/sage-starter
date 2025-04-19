@@ -19,7 +19,7 @@
             {{-- Featured Image --}}
             @if (has_post_thumbnail())
                 <div class="mb-8">
-                    {!! get_the_post_thumbnail(null, 'large', ['class' => 'rounded-lg w-full']) !!}
+                    {!! get_the_post_thumbnail(null, 'medium', ['class' => 'w-[50%] h-auto ']) !!}
                 </div>
             @endif
 
