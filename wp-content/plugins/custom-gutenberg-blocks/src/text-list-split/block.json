@@ -3,32 +3,20 @@
 	"apiVersion": 3,
 	"name": "create-block/text-list-split",
 	"version": "0.1.0",
-	"title": "Cards",
+	"title": "Text List Split",
 	"category": "widgets",
 	"icon": "smiley",
-	"description": "Section with up to 4 cards.",
+	"description": "Split section with heading + text left, and list of text items right.",
 	"attributes": {
-	  "title": {
-		"type": "string",
-		"default": ""
-	  },
-	  "subtitle": {
-		"type": "string",
-		"default": ""
-	  },
-	  "cards": {
-		"type": "array",
-		"default": []
-	  }
+	  "title": { "type": "string", "default": "" },
+	  "subtitle": { "type": "string", "default": "" },
+	  "cards": { "type": "array", "default": [] },
+	  "variant": { "type": "string", "default": "light" }
 	},
-	"example": {},
-	"supports": {
-	  "html": false
-	},
+	"supports": { "html": false },
 	"textdomain": "custom-gutenberg-blocks",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
-	"render": "file:./render.php",
-	"viewScript": "file:./view.js"
+	"render": "file:./render.php"
   }

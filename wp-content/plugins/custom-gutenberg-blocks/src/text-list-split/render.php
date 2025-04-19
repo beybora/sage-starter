@@ -1,11 +1,14 @@
 <?php
 
-/**
- * Server-side rendering for Cards Grid block.
- * Passes all attributes and content to Blade view.
- */
+$attributes = $attributes ?? [];
+$title = $attributes['title'] ?? '';
+$subtitle = $attributes['subtitle'] ?? '';
+$cards = $attributes['cards'] ?? [];
+$variant = $attributes['variant'] ?? 'light';
 
-echo \Roots\view('sections.text-list-split', [
-	'attributes' => $attributes ?? [],
-	'content'    => $content ?? '',
-])->render();
+echo \Roots\view('sections.text-list-split', compact(
+	'title',
+	'subtitle',
+	'cards',
+	'variant'
+))->render();
