@@ -4,38 +4,41 @@
     $imageUrl = $imageUrl ?? '';
     $buttonText = $buttonText ?? 'Register';
     $buttonUrl = $buttonUrl ?? '#';
+    $variant = $variant ?? 'light';
+
+    $hasImage = !empty($imageUrl);
+
+    $sectionClass = $variant === 'dark' ? 'bg-primary text-white' : 'bg-surface text-dark';
+    $textColor = $variant === 'dark' ? 'text-white' : 'text-dark';
+    $mutedColor = $variant === 'dark' ? 'text-white' : 'text-dark';
 @endphp
 
-<section class="hero bg-surface hero-spacing">
+<section class="hero {{ $sectionClass }} hero-spacing">
     <div class="container-layout">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-15 items-center">
+        <div class="grid {{ $hasImage ? 'grid-cols-1 md:grid-cols-2 items-center gap-15' : '' }}">
 
             {{-- Image --}}
-            <div class="flex justify-center">
-                @if (!empty($imageUrl))
+            @if ($hasImage)
+                <div class="flex justify-center">
                     <img src="{{ $imageUrl }}" alt="{{ $title }}" class="w-full max-w-md h-auto object-cover" />
-                @else
-                    <div
-                        class="w-full max-w-md h-64 bg-dark rounded-md flex items-center justify-center text-muted text-sm">
-                        Bild-Platzhalter
-                    </div>
-                @endif
-            </div>
+                </div>
+            @endif
 
             {{-- Text Content --}}
-            <div class="text-left">
-                <h1 class="h1 sm:text-5xl md:text-6xl text-primary font-semibold">
+            <div class="{{ $hasImage ? 'text-left' : 'text-center max-w-2xl mx-auto' }}">
+                <h1 class="h1 sm:text-5xl md:text-6xl {{ $textColor }} font-semibold">
                     {{ $title }}
                 </h1>
-                <p class="mt-4 sm:mt-6 paragraph text-muted text-base sm:text-lg">
+                <p class="mt-4 sm:mt-6 paragraph text-base sm:text-lg {{ $mutedColor }}">
                     {{ $description }}
                 </p>
 
                 @if (!empty($buttonText))
-                    <a href="{{ $buttonUrl }}"
-                        class="mt-6 inline-block bg-primary text-white px-6 py-3 rounded-md hover:opacity-90 transition font-medium">
-                        {{ $buttonText }}
-                    </a>
+                    <div class="mt-6">
+                        <x-button :href="$buttonUrl" variant="primary" size="lg">
+                            {{ $buttonText }}
+                        </x-button>
+                    </div>
                 @endif
             </div>
 

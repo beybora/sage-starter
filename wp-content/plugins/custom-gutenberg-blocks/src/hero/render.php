@@ -2,16 +2,18 @@
 
 $attributes = $attributes ?? [];
 
-$title = $attributes['title'] ?? '';
+$title       = $attributes['title'] ?? '';
 $description = $attributes['description'] ?? '';
-$imageUrl = $attributes['imageUrl'] ?? '';
-$buttonText = $attributes['buttonText'] ?? '';
-$buttonUrl = $attributes['buttonUrl'] ?? '';
+$imageUrl    = $attributes['imageUrl'] ?? '';
+$buttonText  = $attributes['buttonText'] ?? '';
+$buttonUrl   = $attributes['buttonUrl'] ?? '';
+$variant     = $attributes['variant'] ?? 'light';
 
 echo \Roots\view('sections.hero', compact(
-    'title',
-    'description',
-    'imageUrl',
-    'buttonText',
-    'buttonUrl'
+	'title',
+	'description',
+	'imageUrl',
+	'buttonText',
+	'buttonUrl',
+	'variant'
 ))->render();
