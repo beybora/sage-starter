@@ -19,6 +19,10 @@
 	  "postType": {
 		"type": "string",
 		"default": "post"
+	  },
+	  "variant": {
+		"type": "string",
+		"default": "light"
 	  }
 	},
 	"supports": {

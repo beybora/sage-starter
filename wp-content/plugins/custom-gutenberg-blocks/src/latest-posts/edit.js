@@ -7,8 +7,13 @@ const postTypes = [
 	{ label: 'Events', value: 'event' },
 ];
 
+const variants = [
+	{ label: 'Light', value: 'light' },
+	{ label: 'Dark', value: 'dark' },
+];
+
 export default function Edit({ attributes, setAttributes }) {
-	const { headline, subheadline, postType } = attributes;
+	const { headline, subheadline, postType, variant } = attributes;
 
 	return (
 		<>
@@ -30,6 +35,12 @@ export default function Edit({ attributes, setAttributes }) {
 						options={postTypes}
 						onChange={(val) => setAttributes({ postType: val })}
 					/>
+					<SelectControl
+						label="Darstellung"
+						value={variant}
+						options={variants}
+						onChange={(val) => setAttributes({ variant: val })}
+					/>
 				</PanelBody>
 			</InspectorControls>
 
@@ -38,7 +49,8 @@ export default function Edit({ attributes, setAttributes }) {
 					className: 'editor-box',
 					style: {
 						border: '1px solid #ccc',
-						backgroundColor: '#fafafa',
+						backgroundColor: variant === 'dark' ? '#E30C17' : '#fafafa',
+						color: variant === 'dark' ? '#ffffff' : '#1A1A1A',
 						borderRadius: '0.5rem',
 						padding: '1.5rem',
 						marginBottom: '1.5rem',
@@ -46,12 +58,10 @@ export default function Edit({ attributes, setAttributes }) {
 					},
 				})}
 			>
-				{/* Section Label */}
-				<div style={{ fontWeight: 'bold', fontSize: '0.9rem', marginBottom: '1rem', color: '#374151' }}>
+				<div style={{ fontWeight: 'bold', fontSize: '0.9rem', marginBottom: '1rem' }}>
 					Latest Posts Section
 				</div>
 
-				{/* Headline */}
 				<div style={{ marginBottom: '1rem', textAlign: 'center' }}>
 					<RichText
 						tagName="h2"
@@ -67,7 +77,6 @@ export default function Edit({ attributes, setAttributes }) {
 					/>
 				</div>
 
-				{/* Subheadline */}
 				<div style={{ marginBottom: '2rem', textAlign: 'center' }}>
 					<RichText
 						tagName="p"
@@ -83,7 +92,6 @@ export default function Edit({ attributes, setAttributes }) {
 					/>
 				</div>
 
-				{/* Grid Placeholder */}
 				<div
 					style={{
 						display: 'grid',
