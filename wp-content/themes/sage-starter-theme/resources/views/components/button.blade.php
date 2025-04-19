@@ -6,11 +6,12 @@
 
 @php
     $base =
-        'inline-block font-semibold rounded-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 button-text';
+        'inline-block font-semibold transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 button-text';
 
     $variants = [
-        'primary' => 'bg-primary text-white hover:bg-primary/90',
-        'secondary' => 'bg-surface text-primary border border-primary hover:bg-primary hover:text-white',
+        'primary' => 'bg-primary text-white hover:bg-[#C2181A]',
+        'secondary' => 'bg-white text-primary border border-primary hover:bg-primary hover:text-white',
+
         'ghost' => 'bg-transparent text-primary hover:underline',
     ];
 
@@ -22,6 +23,6 @@
 @endphp
 
 <a href="{{ $href }}"
-    class="text-dark {{ $base }} {{ $variants[$variant] ?? $variants['primary'] }} {{ $sizes[$size] ?? $sizes['md'] }}">
+    class="{{ $base }} {{ $variants[$variant] ?? $variants['primary'] }} {{ $sizes[$size] ?? $sizes['md'] }}">
     {{ $slot }}
 </a>
