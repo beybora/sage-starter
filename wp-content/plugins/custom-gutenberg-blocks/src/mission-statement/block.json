@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "custom-block/mission-statement",
+	"version": "0.1.0",
+	"title": "Mission Statement",
+	"category": "layout",
+	"icon": "format-quote",
+	"description": "Zentrierte Headline mit optionaler Subline – ideal für Zitate oder Mission Statements.",
+	"keywords": ["mission", "quote", "statement", "zentriert", "center"],
+	"attributes": {
+	  "headline": {
+		"type": "string",
+		"default": ""
+	  },
+	  "subline": {
+		"type": "string",
+		"default": ""
+	  },
+	  "variant": {
+		"type": "string",
+		"default": "light"
+	  }
+	},
+	"supports": {
+	  "html": false,
+	  "align": ["wide", "full"]
+	},
+	"textdomain": "custom-gutenberg-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+  }
