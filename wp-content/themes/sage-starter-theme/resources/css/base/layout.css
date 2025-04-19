@@ -1,5 +1,9 @@
 .section-spacing {
-  @apply py-20;
+  @apply py-10;
+}
+
+.hero-spacing {
+  @apply py-30;
 }
 
 .container-layout {
