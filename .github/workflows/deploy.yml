@@ -1,0 +1,42 @@
+name: Deploy to Live
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Build Custom Gutenberg Blocks
+      - name: Build Gutenberg Blocks
+        working-directory: wp-content/plugins/custom-gutenberg-blocks
+        run: |
+          npm ci
+          npm run build
+
+      # Build Sage Theme (npm + composer)
+      - name: Build Sage Theme
+        working-directory: wp-content/themes/sage-starter-theme
+        run: |
+          npm ci
+          npm run build
+          composer install --no-dev --optimize-autoloader
+
+      # Deploy über rsync (inkl. .deployignore)
+      - name: Deploy via rsync
+        uses: burnett01/rsync-deployments@7.0.2
+        with:
+          switches: -avzr --delete --exclude-from=.deployignore
+          path: wp-content/
+          remote_path: /home/u892380193/domains/borabey.com/public_html/wp-content
+          remote_host: ${{ secrets.DEPLOY_HOST }}
+          remote_port: ${{ secrets.DEPLOY_PORT }}
+          remote_user: ${{ secrets.DEPLOY_USER }}
+          remote_key: ${{ secrets.DEPLOY_KEY }}
