@@ -29,6 +29,9 @@ wp-settings.php
 wp-config.php
 wp-content/cache/*
 
+wp-content/plugins/*
+!wp-content/plugins/custom-gutenberg-blocks/**
+
 # WordPress admin and includes
 wp-admin
 wp-includes
