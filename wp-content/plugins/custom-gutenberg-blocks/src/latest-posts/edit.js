@@ -10,6 +10,7 @@ const postTypes = [
 const variants = [
 	{ label: 'Light', value: 'light' },
 	{ label: 'Dark', value: 'dark' },
+	{ label: 'Light Gray', value: 'light-gray' },
 ];
 
 export default function Edit({ attributes, setAttributes }) {

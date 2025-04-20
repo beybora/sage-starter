@@ -1,54 +1,54 @@
 import { __ } from '@wordpress/i18n';
-import { useBlockProps, PlainText } from '@wordpress/block-editor';
+import {
+	useBlockProps,
+	PlainText,
+	InspectorControls,
+} from '@wordpress/block-editor';
+import { PanelBody, SelectControl } from '@wordpress/components';
+
+const variantOptions = [
+	{ label: 'Light', value: 'light' },
+	{ label: 'Dark', value: 'dark' },
+	{ label: 'Light Gray', value: 'light-gray' },
+];
 
 export default function Edit({ attributes, setAttributes }) {
-	const { headline, subheadline } = attributes;
+	const { headline, subheadline, variant } = attributes;
 
 	return (
-		<div
-			{...useBlockProps({
-				className: 'editor-box',
-				style: {
-					border: '1px solid #ccc',
-					backgroundColor: '#fafafa',
-					borderRadius: '0.5rem',
-					padding: '1.5rem',
-					marginBottom: '1.5rem',
-					boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
-				},
-			})}
-		>
-			{/* Section Label */}
-			<div style={{ fontWeight: 'bold', fontSize: '0.9rem', marginBottom: '1rem', color: '#374151' }}>
-				Upcoming Events – Block Settings
-			</div>
+		<>
+			<InspectorControls>
+				<PanelBody title={__('Einstellungen', 'custom-gutenberg-blocks')}>
+					<SelectControl
+						label={__('Farbvariante', 'custom-gutenberg-blocks')}
+						value={variant}
+						options={variantOptions}
+						onChange={(val) => setAttributes({ variant: val })}
+					/>
+				</PanelBody>
+			</InspectorControls>
 
-			{/* Headline */}
-			<div style={{ marginBottom: '1rem' }}>
-				<strong style={{ display: 'block', marginBottom: '0.25rem', fontSize: '0.875rem', color: '#4b5563' }}>
-					{__('Headline', 'custom-gutenberg-blocks')}
-				</strong>
-				<PlainText
-					style={{
+			<div
+				{...useBlockProps({
+					className: 'editor-box',
+					style: {
 						border: '1px solid #ccc',
-						borderRadius: '0.375rem',
-						padding: '0.75rem 1rem',
-						marginBottom: '1rem',
-						minHeight: '48px',
-						width: '100%',
-					}}
+						backgroundColor: '#fafafa',
+						borderRadius: '0.5rem',
+						padding: '1.5rem',
+						marginBottom: '1.5rem',
+						boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+					},
+				})}
+			>
+				<div style={{ fontWeight: 'bold', marginBottom: '1rem', fontSize: '0.9rem', color: '#374151' }}>
+					Upcoming Events – Block Settings
+				</div>
+
+				<PlainText
 					value={headline}
-					onChange={(value) => setAttributes({ headline: value })}
+					onChange={(val) => setAttributes({ headline: val })}
 					placeholder={__('Add a headline…', 'custom-gutenberg-blocks')}
-				/>
-			</div>
-
-			{/* Subheadline */}
-			<div style={{ marginBottom: '1.5rem' }}>
-				<strong style={{ display: 'block', marginBottom: '0.25rem', fontSize: '0.875rem', color: '#4b5563' }}>
-					{__('Subheadline', 'custom-gutenberg-blocks')}
-				</strong>
-				<PlainText
 					style={{
 						border: '1px solid #ccc',
 						borderRadius: '0.375rem',
@@ -57,11 +57,22 @@ export default function Edit({ attributes, setAttributes }) {
 						minHeight: '48px',
 						width: '100%',
 					}}
+				/>
+
+				<PlainText
 					value={subheadline}
-					onChange={(value) => setAttributes({ subheadline: value })}
+					onChange={(val) => setAttributes({ subheadline: val })}
 					placeholder={__('Add a subheadline…', 'custom-gutenberg-blocks')}
+					style={{
+						border: '1px solid #ccc',
+						borderRadius: '0.375rem',
+						padding: '0.75rem 1rem',
+						marginBottom: '1rem',
+						minHeight: '48px',
+						width: '100%',
+					}}
 				/>
 			</div>
-		</div>
+		</>
 	);
 }

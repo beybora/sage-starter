@@ -9,6 +9,8 @@ import { PanelBody, SelectControl } from '@wordpress/components';
 const variantOptions = [
 	{ label: 'Light', value: 'light' },
 	{ label: 'Dark', value: 'dark' },
+	{ label: 'Light Gray', value: 'light-gray' },
+	{ label: 'Light Gray', value: 'light-gray' },
 ];
 
 export default function Edit({ attributes, setAttributes }) {
