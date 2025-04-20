@@ -18,9 +18,6 @@
 
             {{-- Navigation --}}
             @include('partials.main-navigation')
-
-            {{-- Hamburger Menu for Mobile --}}
-
         </div>
     </div>
 </header>
