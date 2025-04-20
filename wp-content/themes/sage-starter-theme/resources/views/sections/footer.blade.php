@@ -3,7 +3,7 @@
         <div class="flex flex-col md:flex-row justify-between gap-10 items-start">
 
             {{-- Main Navigation --}}
-            @include('partials.main-navigation')
+            @include('partials.footer-navigation')
 
             {{-- Logo + Copyright + Social Icons --}}
             <div class="space-y-4 text-left md:text-right">
