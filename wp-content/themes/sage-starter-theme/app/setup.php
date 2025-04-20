@@ -175,3 +175,4 @@ add_action('widgets_init', function () {
 require_once get_theme_file_path('app/PostTypes/upcoming-event.php');
 require_once get_theme_file_path('app/PostTypes/representatives.php');
 require_once get_theme_file_path('app/PostTypes/press-release.php');
+require_once get_theme_file_path('app/PostTypes/board-members.php');
