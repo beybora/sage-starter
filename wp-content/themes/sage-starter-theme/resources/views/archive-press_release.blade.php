@@ -5,7 +5,7 @@
         <div class="container-layout">
 
             {{-- Page Title --}}
-            <h1 class="h1 mb-6">Press Releases</h1>
+            <h1 class="h2 mb-6 text-center">Press Releases</h1>
 
             @if (have_posts())
                 <div class="space-y-10">
@@ -14,8 +14,8 @@
 
                         {{-- Press Release Card --}}
                         <article class="border-b border-[#ddd] pb-6">
-                            <h2 class="h2 text-lg sm:text-xl font-semibold mb-2">
-                                <a href="{{ get_permalink() }}" class="hover:underline">
+                            <h2 class="h4 mb-2">
+                                <a href="{{ get_permalink() }}" class="hover:underline no-underline ">
                                     {{ get_the_title() }}
                                 </a>
                             </h2>

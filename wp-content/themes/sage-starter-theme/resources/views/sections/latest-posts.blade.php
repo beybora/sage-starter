@@ -1,7 +1,18 @@
 @php
     $variant = $variant ?? 'light';
-
-    $sectionClass = $variant === 'dark' ? 'bg-primary text-white' : 'bg-surface text-dark';
+    if ($variant === 'dark') {
+        $sectionClass = 'bg-primary text-white';
+        $textColor = 'text-white';
+        $mutedColor = 'text-white';
+    } elseif ($variant === 'light-gray') {
+        $sectionClass = 'bg-light text-dark';
+        $textColor = 'text-dark';
+        $mutedColor = 'text-dark';
+    } else {
+        $sectionClass = 'bg-surface text-dark';
+        $textColor = 'text-dark';
+        $mutedColor = 'text-dark';
+    }
 @endphp
 
 <section class="latest-posts {{ $sectionClass }} section-spacing">
@@ -10,11 +21,11 @@
         {{-- Headline & Subheadline --}}
         <div class="mb-10 text-center">
             @if (!empty($headline))
-                <h2 class="h2 mb-2 {{ $variant === 'dark' ? 'text-white' : 'text-dark' }}">{{ $headline }}</h2>
+                <h2 class="h2 mb-2 {{ $textColor }}">{{ $headline }}</h2>
             @endif
 
             @if (!empty($subheadline))
-                <p class="subtitle {{ $variant === 'dark' ? 'text-white' : 'text-dark' }}">{{ $subheadline }}</p>
+                <p class="subtitle {{ $mutedColor }}">{{ $subheadline }}</p>
             @endif
         </div>
 

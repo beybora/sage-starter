@@ -5,7 +5,7 @@
         <div class="container-layout">
 
             {{-- Page Headline --}}
-            <h1 class="h1 mb-10 text-center">Unsere Vertreter:innen</h1>
+            <h1 class="h2 mb-10 text-center">Unsere Vertreter:innen</h1>
 
             @php
                 $terms = get_terms([
@@ -17,7 +17,7 @@
             @foreach ($terms as $term)
                 {{-- Term Section --}}
                 <section class="mb-16">
-                    <h2 class="h2 mb-6">{{ $term->name }}</h2>
+                    <h2 class="h4 mb-6">{{ $term->name }}</h2>
 
                     @php
                         $query = new WP_Query([
@@ -36,9 +36,9 @@
                         <ul class="grid grid-cols-1 md:grid-cols-3 gap-6">
                             @while ($query->have_posts())
                                 @php($query->the_post())
-                                <li class="bg-surface p-6 border rounded-xl shadow-sm text-center">
-                                    <h3 class="h3 mb-1">{{ get_field('representative_name') }}</h3>
-                                    <p class="text-sm text-muted">
+                                <li class="bg-surface p-4 border shadow-sm text-center">
+                                    <h3 class="h5 mb-1">{{ get_field('representative_name') }}</h3>
+                                    <p class="above-title text-muted">
                                         {{ get_field('representative_position') }}
                                     </p>
                                 </li>

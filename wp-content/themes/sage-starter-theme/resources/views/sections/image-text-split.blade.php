@@ -1,11 +1,22 @@
 @php
     $variant = $variant ?? 'dark';
 
-    // Dynamische Klassen basierend auf Variante
-    $sectionClass = $variant === 'dark' ? 'bg-primary text-white' : 'bg-surface text-dark';
-    $textColor = $variant === 'dark' ? 'text-white' : 'text-dark';
-    $mutedColor = $variant === 'dark' ? 'text-muted' : 'text-muted';
-    $buttonVariant = $variant === 'dark' ? 'secondary' : 'primray';
+    if ($variant === 'dark') {
+        $sectionClass = 'bg-primary text-white';
+        $textColor = 'text-white';
+        $mutedColor = 'text-muted';
+        $buttonVariant = 'secondary';
+    } elseif ($variant === 'light-gray') {
+        $sectionClass = 'bg-light text-dark';
+        $textColor = 'text-dark';
+        $mutedColor = 'text-dark';
+        $buttonVariant = 'primary';
+    } else {
+        $sectionClass = 'bg-surface text-dark';
+        $textColor = 'text-dark';
+        $mutedColor = 'text-muted';
+        $buttonVariant = 'primary';
+    }
 @endphp
 
 <section class="image-text-split {{ $sectionClass }} section-spacing">

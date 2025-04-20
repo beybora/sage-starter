@@ -3,21 +3,31 @@
     $subline = $subline ?? '';
     $variant = $variant ?? 'light';
 
-    $sectionClass = $variant === 'dark' ? 'bg-primary text-white' : 'bg-surface text-dark';
-    $textColor = $variant === 'dark' ? 'text-white' : 'text-dark';
-    $mutedColor = $variant === 'dark' ? 'text-muted' : 'text-muted';
+    if ($variant === 'dark') {
+        $sectionClass = 'bg-primary text-white';
+        $textColor = 'text-white';
+        $mutedColor = 'text-white';
+    } elseif ($variant === 'light-gray') {
+        $sectionClass = 'bg-light text-dark';
+        $textColor = 'text-dark';
+        $mutedColor = 'text-dark';
+    } else {
+        $sectionClass = 'bg-surface text-dark';
+        $textColor = 'text-dark';
+        $mutedColor = 'text-dark';
+    }
 @endphp
 
 <section class="section-mission-statement {{ $sectionClass }} section-spacing">
     <div class="container-layout text-center max-w-3xl mx-auto">
         @if (!empty($headline))
-            <h2 class="h2 text-3xl md:text-4xl font-semibold {{ $textColor }}">
+            <h2 class="h3 text-3xl md:text-4xl font-semibold {{ $textColor }}">
                 {{ $headline }}
             </h2>
         @endif
 
         @if (!empty($subline))
-            <p class="paragraph mt-4 text-lg {{ $mutedColor }}">
+            <p class="subtitle mt-4 text-lg {{ $mutedColor }}">
                 {{ $subline }}
             </p>
         @endif

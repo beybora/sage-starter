@@ -4,9 +4,19 @@
     $cards = $cards ?? [];
     $variant = $variant ?? 'light';
 
-    $sectionClass = $variant === 'dark' ? 'bg-primary text-white' : 'bg-surface text-dark';
-    $textColor = $variant === 'dark' ? 'text-white' : 'text-dark';
-    $mutedColor = $variant === 'dark' ? 'text-muted' : 'text-muted';
+    if ($variant === 'dark') {
+        $sectionClass = 'bg-primary text-white';
+        $textColor = 'text-white';
+        $mutedColor = 'text-muted';
+    } elseif ($variant === 'light-gray') {
+        $sectionClass = 'bg-light text-dark';
+        $textColor = 'text-dark';
+        $mutedColor = 'text-dark';
+    } else {
+        $sectionClass = 'bg-surface text-dark';
+        $textColor = 'text-dark';
+        $mutedColor = 'text-muted';
+    }
 @endphp
 
 <section class="cards-section {{ $sectionClass }} section-spacing">

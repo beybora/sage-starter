@@ -1,7 +1,17 @@
 @php
-    $sectionClass = $variant === 'dark' ? 'bg-primary text-white' : 'bg-surface text-dark';
-    $textColor = $variant === 'dark' ? 'text-white' : 'text-dark';
-    $mutedColor = $variant === 'dark' ? 'text-white' : 'text-white';
+    if ($variant === 'dark') {
+        $sectionClass = 'bg-primary text-white';
+        $textColor = 'text-white';
+        $mutedColor = 'text-white';
+    } elseif ($variant === 'light-gray') {
+        $sectionClass = 'bg-light text-dark';
+        $textColor = 'text-dark';
+        $mutedColor = 'text-dark';
+    } else {
+        $sectionClass = 'bg-surface text-dark';
+        $textColor = 'text-dark';
+        $mutedColor = 'text-muted';
+    }
 @endphp
 
 <section class="text-list-split section-spacing {{ $sectionClass }}">
@@ -22,7 +32,7 @@
             @if (!empty($cards))
                 <div class="md:w-1/2 lg:w-3/5 space-y-6">
                     @foreach ($cards as $card)
-                        <div class="border-l-4 border-primary pl-4">
+                        <div class="border-l-3 border-primary pl-4">
                             @if (!empty($card['title']))
                                 <h3 class="h4 {{ $textColor }}">{{ $card['title'] }}</h3>
                             @endif
