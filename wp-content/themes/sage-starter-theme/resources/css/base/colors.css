@@ -15,4 +15,5 @@
 
 .bg-surface   { @apply bg-[#FAFAFA]; }
 
-.text-body  { @apply text-[#1A1A1A]; }
+.bg-light     { @apply bg-[#E0E0E0]; }
+.text-body    { @apply text-[#1A1A1A]; }
