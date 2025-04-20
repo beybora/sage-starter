@@ -19,7 +19,7 @@
     <div class="container-layout">
 
         {{-- Headline & Subheadline --}}
-        <div class="mb-10 text-center">
+        <div class="mb-10">
             @if (!empty($headline))
                 <h2 class="h2 mb-2 {{ $textColor }}">{{ $headline }}</h2>
             @endif

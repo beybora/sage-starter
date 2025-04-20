@@ -16,7 +16,7 @@
     }
 @endphp
 
-<section class="section-upcoming-events {{ $sectionClass }} section-spacing">
+<section class="section-upcoming-events {{ $sectionClass }} section-spacing-sm">
     <div class="container-layout">
 
         @if ($headline)
