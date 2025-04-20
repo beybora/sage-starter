@@ -1,12 +1,13 @@
 @php
+    $siteName = get_bloginfo('name');
+
     $locations = get_nav_menu_locations();
     $menu_id = $locations['primary_navigation'] ?? null;
-    $menu = $menu_id ? wp_get_nav_menu_items($menu_id) : [];
-    $current_url = url()->current();
+    $menu_items = $menu_id ? wp_get_nav_menu_items($menu_id) : [];
 @endphp
 
-<header class="bg-primary shadow-sm">
-    <div class="container-layout">
+<header class="bg-primary shadow-sm" x-data="{ open: false }">
+    <div class="header-layout">
         <div class="flex items-center justify-between h-20">
 
             {{-- Logo --}}
@@ -16,8 +17,26 @@
                 {{ $siteName }}
             </a>
 
-            {{-- Navigation --}}
-            @include('partials.main-navigation')
+            {{-- Desktop Navigation --}}
+            <div class="hidden md-l:flex items-center gap-5">
+                @include('partials.main-navigation')
+
+                <x-button href="#" variant="secondary" size="lg">
+                    Join us
+                </x-button>
+            </div>
+
+            {{-- Hamburger Button for Mobile --}}
+            <button @click="open = !open" class="md-l:hidden text-white focus:outline-none">
+                <span class="block w-6 h-0.5 bg-white mb-1"></span>
+                <span class="block w-6 h-0.5 bg-white mb-1"></span>
+                <span class="block w-6 h-0.5 bg-white"></span>
+            </button>
+
         </div>
     </div>
+
+    {{-- Mobile Menu --}}
+    @include('partials.mobile-menu')
+
 </header>
