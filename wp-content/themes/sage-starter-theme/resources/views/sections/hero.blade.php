@@ -25,7 +25,7 @@
             @endif
 
             {{-- Text Content --}}
-            <div class="{{ $hasImage ? 'text-left' : 'text-center max-w-2xl mx-auto' }}">
+            <div class="{{ $hasImage ? 'text-center md:text-left' : 'text-center max-w-2xl mx-auto' }}">
                 <h1 class="h1 sm:text-5xl md:text-6xl {{ $textColor }} font-semibold">
                     {{ $title }}
                 </h1>
