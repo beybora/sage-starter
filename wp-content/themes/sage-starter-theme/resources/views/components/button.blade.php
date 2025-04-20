@@ -11,7 +11,6 @@
     $variants = [
         'primary' => 'bg-primary text-white hover:bg-[#C2181A]',
         'secondary' => 'bg-white text-primary border border-primary hover:bg-primary hover:text-white',
-
         'ghost' => 'bg-transparent text-primary hover:underline',
     ];
 

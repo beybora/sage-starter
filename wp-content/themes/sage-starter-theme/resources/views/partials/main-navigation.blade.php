@@ -2,7 +2,7 @@
     $siteName = get_bloginfo('name');
 
     $locations = get_nav_menu_locations();
-    $menu_id = $locations['footer_navigation'] ?? null;
+    $menu_id = $locations['primary_navigation'] ?? null;
     $menu_items = $menu_id ? wp_get_nav_menu_items($menu_id) : [];
 @endphp
 

@@ -14,6 +14,7 @@
                 </p>
 
                 {{-- Social Icons --}}
+
                 @include('partials.social-icons')
             </div>
 

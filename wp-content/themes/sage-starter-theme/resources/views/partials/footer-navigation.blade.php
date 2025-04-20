@@ -11,7 +11,7 @@
     <ul>
         @foreach ($menu_items as $item)
             <li>
-                <a href="{{ $item->url }}" class="nav-link text-white hover:text-accent">
+                <a href="{{ $item->url }}" class="nav-link text-white hover:text-primary">
                     {{ $item->title }}
                 </a>
             </li>
