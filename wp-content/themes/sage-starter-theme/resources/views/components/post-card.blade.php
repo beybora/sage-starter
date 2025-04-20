@@ -5,20 +5,30 @@
 
     $variant = $variant ?? 'light';
 
-    $bgColor = $variant === 'light' ? 'bg-dark text-white' : 'bg-white text-dark';
-    $linkColor = $variant === 'light' ? 'text-white hover:underline' : 'text-primary hover:underline';
+    if ($variant === 'light') {
+        $bgColor = 'bg-light text-dark';
+        $linkColor = 'text-primary hover:underline';
+    } elseif ($variant === 'light-gray') {
+        $bgColor = 'bg-white text-dark';
+        $cardBgColor = 'bg-white';
+        $linkColor = 'text-primary hover:underline';
+    } else {
+        $bgColor = 'bg-white text-dark';
+        $cardBgColor = 'bg-light';
+        $linkColor = 'text-primary hover:underline';
+    }
 @endphp
 
-<article class="{{ $bgColor }} shadow-sm hover:shadow-md transition p-6 flex flex-col h-full">
+<article class="{{ $bgColor }} shadow-md hover:shadow-xl transition p-6 flex flex-col h-full ">
 
     {{-- Featured Image --}}
     @if ($hasThumbnail)
         {!! get_the_post_thumbnail($post, 'medium', [
-            'class' => 'w-full h-52 object-cover mb-4',
+            'class' => 'w-full h-52 object-cover mb-4 ',
             'alt' => esc_attr($title),
         ]) !!}
     @else
-        <div class="w-full h-52 bg-surface flex items-center justify-center text-sm text-muted mb-4">
+        <div class="w-full h-52 bg-surface flex items-center justify-center text-sm text-muted mb-4 ">
             {{ __('No image', 'textdomain') }}
         </div>
     @endif
