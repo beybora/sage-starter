@@ -15,11 +15,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#E30C17',        // Rot für Hauptaktionen
-        accent: '#053D5D',         // Dunkelblau für Headlines/Links
-        muted: '#888888',          // Subtext/Fußnoten
-        dark: '#1A1A1A',           // Text/Fokusinhalt
-        surface: '#FAFAFA',        // Hintergrund-Flächen
+        primary: '#E30C17',
+        accent: '#053D5D',
+        muted: '#888888',
+        dark: '#1A1A1A',
+        surface: '#FAFAFA',
       }
     },
   },
