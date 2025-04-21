@@ -4,7 +4,7 @@
 	"name": "custom-block/posts-section",
 	"version": "0.1.0",
 	"title": "Posts Section",
-	"category": "widgets",
+	"category": "custom-blocks",
 	"icon": "megaphone",
 	"description": "Section to display latest blog posts with a custom headline and subheadline.",
 	"attributes": {
