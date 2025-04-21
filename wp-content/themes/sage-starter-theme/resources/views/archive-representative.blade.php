@@ -4,8 +4,11 @@
     <section class="bg-white section-spacing">
         <div class="container-layout">
 
-            {{-- Page Headline --}}
-            <h1 class="h2 mb-10 text-center">Unsere Vertreter:innen</h1>
+            {{-- Page Headline via Customizer --}}
+            @php
+                $headline = get_theme_mod('district_representatives_headline', __('Unsere Vertreter:innen', 'sage'));
+            @endphp
+            <h1 class="h2 mb-10 text-center">{{ $headline }}</h1>
 
             @php
                 $terms = get_terms([
@@ -17,7 +20,15 @@
             @foreach ($terms as $term)
                 {{-- Term Section --}}
                 <section class="mb-16">
-                    <h2 class="h4 mb-6">{{ $term->name }}</h2>
+                    {{-- Term Name --}}
+                    <h2 class="h4 mb-2">{{ $term->name }}</h2>
+
+                    {{-- Term Description --}}
+                    @if (!empty($term->description))
+                        <p class="paragraph text-muted mb-6">
+                            {!! nl2br(e($term->description)) !!}
+                        </p>
+                    @endif
 
                     @php
                         $query = new WP_Query([

@@ -14,7 +14,7 @@
 
                         {{-- Press Release Card --}}
                         <article class="border-b border-[#ddd] pb-6">
-                            <h2 class="h4 mb-2">
+                            <h2 class="h4 mb-2 italic">
                                 <a href="{{ get_permalink() }}" class="hover:underline no-underline ">
                                     {{ get_the_title() }}
                                 </a>

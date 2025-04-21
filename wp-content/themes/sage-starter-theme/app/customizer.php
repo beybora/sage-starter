@@ -19,7 +19,6 @@ add_action('customize_register', function ($wp_customize) {
         'type'    => 'text',
     ]);
 
-    // URL Setting
     $wp_customize->add_setting('header_button_url', [
         'default'           => '#',
         'sanitize_callback' => 'esc_url_raw',
@@ -29,5 +28,38 @@ add_action('customize_register', function ($wp_customize) {
         'label'   => __('Button URL', 'sage'),
         'section' => 'header_cta',
         'type'    => 'url',
+    ]);
+
+    $wp_customize->add_section('vorstand_section', [
+        'title' => __('Vorstand', 'sage'),
+        'priority' => 30,
+    ]);
+
+    $wp_customize->add_setting('vorstand_headline', [
+        'default' => __('Unsere Vorstandsmitglieder', 'sage'),
+        'type' => 'theme_mod',
+    ]);
+
+    $wp_customize->add_control('vorstand_headline', [
+        'label' => __('Headline auf der Vorstand-Seite', 'sage'),
+        'section' => 'vorstand_section',
+        'type' => 'text',
+    ]);
+
+    $wp_customize->add_section('district_representatives_section', [
+        'title' => __('District Representatives', 'sage'),
+        'priority' => 31,
+    ]);
+
+    // Headline
+    $wp_customize->add_setting('district_representatives_headline', [
+        'default' => __('Unsere Vertreter:innen', 'sage'),
+        'type' => 'theme_mod',
+    ]);
+
+    $wp_customize->add_control('district_representatives_headline', [
+        'label' => __('Headline auf der Vertreter:innen-Seite', 'sage'),
+        'section' => 'district_representatives_section',
+        'type' => 'text',
     ]);
 });
