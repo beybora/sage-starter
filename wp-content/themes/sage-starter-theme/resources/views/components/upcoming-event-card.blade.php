@@ -1,6 +1,6 @@
 @php
     $date_raw = $event->date_raw;
-    $date_obj = $date_raw ? DateTime::createFromFormat('d/m/Y', $date_raw) : null;
+    $date_obj = $date_raw ? DateTime::createFromFormat('Ymd', $date_raw) : null;
     $day = $date_obj ? $date_obj->format('d') : '';
     $month = $date_obj ? strtoupper(strftime('%b', $date_obj->getTimestamp())) : '';
 @endphp

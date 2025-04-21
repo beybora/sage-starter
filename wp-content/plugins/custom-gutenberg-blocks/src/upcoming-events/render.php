@@ -1,12 +1,8 @@
 <?php
 
-if (!function_exists('get_field')) {
-	return;
-}
-
-$headline     = $attributes['headline'] ?? 'Upcoming Events';
-$subheadline  = $attributes['subheadline'] ?? 'Check out our upcoming events!';
-$variant      = $attributes['variant'] ?? 'light';
+$headline    = $attributes['headline'] ?? 'Upcoming Events';
+$subheadline = $attributes['subheadline'] ?? 'Check out our upcoming events!';
+$variant     = $attributes['variant'] ?? 'light';
 
 $rawEvents = get_posts([
 	'post_type'      => 'upcoming_event',
@@ -14,19 +10,25 @@ $rawEvents = get_posts([
 	'orderby'        => 'meta_value',
 	'meta_key'       => 'event_date',
 	'order'          => 'ASC',
-	'meta_query'     => [[
-		'key'     => 'event_date',
-		'value'   => date('dmY'),
-		'compare' => '>=',
-		'type'    => 'NUMERIC',
-	]],
+	'meta_query'     => [
+		[
+			'key'     => 'event_date',
+			'value'   => date('Ymd'),
+			'compare' => '>=',
+			'type'    => 'NUMERIC',
+		]
+	],
 ]);
 
 $events = collect($rawEvents)->map(function ($event) {
+	$rawDate = get_field('event_date', $event->ID);
+	$formattedDate = \DateTime::createFromFormat('Ymd', $rawDate)?->format('d.m.Y');
+
 	return (object) [
 		'id'          => $event->ID,
-		'title'       => get_field('event_title', $event->ID) ?: 'No Title Available',
-		'date_raw'    => get_field('event_date', $event->ID),
+		'title'       => get_field('event_title', $event->ID) ?: 'Kein Titel',
+		'date_raw'    => $rawDate,
+		'date'        => $formattedDate,
 		'description' => get_field('event_description', $event->ID),
 		'location'    => get_field('event_location', $event->ID),
 		'map'         => get_field('event_map', $event->ID),
@@ -34,7 +36,6 @@ $events = collect($rawEvents)->map(function ($event) {
 		'post'        => $event,
 	];
 });
-
 
 echo \Roots\view('sections.upcoming-events', [
 	'headline'    => $headline,

@@ -20,7 +20,7 @@
     <div class="container-layout">
 
         @if ($headline)
-            <h2 class="h2 mb-2 {{ $textColor }}">
+            <h2 class="h2 mb-6 {{ $textColor }}">
                 {{ $headline }}
             </h2>
         @endif
