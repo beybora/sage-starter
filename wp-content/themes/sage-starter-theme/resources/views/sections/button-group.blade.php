@@ -13,7 +13,7 @@
     }
 @endphp
 
-<section class="download-links {{ $sectionClass }} section-spacing">
+<section class="download-links {{ $sectionClass }} section-spacing-sm">
     <div class="container-layout">
         <h2 class="h2 mb-10 text-center {{ $textColor }}">
             {{ $title }}

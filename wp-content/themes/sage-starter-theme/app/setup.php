@@ -199,3 +199,11 @@ add_filter('block_categories_all', function ($categories, $post) {
     ];
     return array_merge($customCategory, $categories);
 }, 10, 2);
+
+
+/**
+ * Register customizer settings
+ *
+ * @return void
+ */
+require_once get_theme_file_path('app/customizer.php');
