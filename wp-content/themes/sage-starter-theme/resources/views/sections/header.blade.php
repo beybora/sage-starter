@@ -18,8 +18,8 @@
             </a>
 
             {{-- Desktop Navigation --}}
-            <div class="hidden md-l:flex items-center gap-5">
-                @include('partials.main-navigation')
+            <div class="hidden md:flex items-center gap-5">
+                @include('partials.main-navigation', ['menu_items' => $menu_items])
 
                 <x-button href="#" variant="secondary" size="lg">
                     Join us
@@ -27,16 +27,14 @@
             </div>
 
             {{-- Hamburger Button for Mobile --}}
-            <button @click="open = !open" class="md-l:hidden text-white focus:outline-none">
+            <button @click="open = !open" class="md:hidden text-white focus:outline-none">
                 <span class="block w-6 h-0.5 bg-white mb-1"></span>
                 <span class="block w-6 h-0.5 bg-white mb-1"></span>
                 <span class="block w-6 h-0.5 bg-white"></span>
             </button>
-
         </div>
     </div>
 
     {{-- Mobile Menu --}}
-    @include('partials.mobile-menu')
-
+    @include('partials.mobile-menu', ['menu_items' => $menu_items])
 </header>
