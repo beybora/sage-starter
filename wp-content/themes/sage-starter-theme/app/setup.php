@@ -182,8 +182,14 @@ require_once get_theme_file_path('app/PostTypes/press-release.php');
 require_once get_theme_file_path('app/PostTypes/board-members.php');
 
 
+/**
+ * Register custom block category
+ *
+ * @return void
+ */
+
 add_filter('block_categories_all', function ($categories, $post) {
-    // Eigene Kategorie
+
     $customCategory = [
         [
             'slug'  => 'custom-blocks',
@@ -191,7 +197,5 @@ add_filter('block_categories_all', function ($categories, $post) {
             'icon'  => null,
         ],
     ];
-
-    // Eigene Kategorie ganz oben einfügen
     return array_merge($customCategory, $categories);
 }, 10, 2);

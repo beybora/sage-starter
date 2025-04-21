@@ -9,8 +9,8 @@
 
             @php
                 $terms = get_terms([
-                    'taxonomy' => 'function', // Taxonomie für Position (z.B. Präsident, Schatzmeister)
-                    'hide_empty' => false, // Auch leere Taxonomien anzeigen
+                    'taxonomy' => 'function',
+                    'hide_empty' => false,
                 ]);
             @endphp
 
@@ -21,10 +21,10 @@
 
                     @php
                         $query = new WP_Query([
-                            'post_type' => 'board_member', // Der Custom Post Type für Board Members
+                            'post_type' => 'board_member',
                             'tax_query' => [
                                 [
-                                    'taxonomy' => 'function', // Die Taxonomie, nach der wir filtern (Position)
+                                    'taxonomy' => 'function',
                                     'field' => 'term_id',
                                     'terms' => $term->term_id,
                                 ],
