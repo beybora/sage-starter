@@ -54,11 +54,11 @@ export default function Edit({ attributes, setAttributes }) {
 				<PlainText
 					style={{
 						border: '1px solid #ccc',
-						borderRadius: '0.5rem',
+						borderRadius: '0.375rem',
 						padding: '0.75rem 1rem',
-						fontSize: '1.25rem',
-						fontWeight: '600',
 						marginBottom: '1rem',
+						minHeight: '48px',
+						width: '100%',
 					}}
 					value={title}
 					onChange={(value) => setAttributes({ title: value })}
@@ -72,7 +72,7 @@ export default function Edit({ attributes, setAttributes }) {
 						borderRadius: '0.5rem',
 						padding: '0.75rem 1rem',
 						fontSize: '1rem',
-						minHeight: '80px',
+						minHeight: '100px',
 						marginBottom: '1rem',
 					}}
 					value={description}
@@ -135,10 +135,11 @@ export default function Edit({ attributes, setAttributes }) {
 					placeholder={__('Button Text', 'textdomain')}
 					style={{
 						border: '1px solid #ccc',
-						borderRadius: '0.5rem',
+						borderRadius: '0.375rem',
 						padding: '0.75rem 1rem',
-						fontSize: '1rem',
 						marginBottom: '1rem',
+						minHeight: '48px',
+						width: '100%',
 					}}
 				/>
 

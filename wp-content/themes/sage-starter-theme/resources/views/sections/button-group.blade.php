@@ -1,18 +1,17 @@
-<?php
+@php
+    $variant = $variant ?? 'light';
 
-$variant = $attributes['variant'] ?? 'light';
-$sectionClass = '';
-
-if ($variant === 'dark') {
-    $sectionClass = 'bg-primary text-white';
-} elseif ($variant === 'light-gray') {
-    $sectionClass = 'bg-light text-dark';
-} else {
-    $sectionClass = 'bg-surface text-dark';
-}
-
-$textColor = $variant === 'dark' || $variant === 'light-gray' ? 'text-white' : 'text-dark';
-?>
+    if ($variant === 'dark') {
+        $sectionClass = 'bg-primary text-white';
+        $textColor = 'text-white';
+    } elseif ($variant === 'light-gray') {
+        $sectionClass = 'bg-light text-dark';
+        $textColor = 'text-white';
+    } else {
+        $sectionClass = 'bg-surface text-dark';
+        $textColor = 'text-dark';
+    }
+@endphp
 
 <section class="download-links {{ $sectionClass }} section-spacing">
     <div class="container-layout">
@@ -20,7 +19,7 @@ $textColor = $variant === 'dark' || $variant === 'light-gray' ? 'text-white' : '
             {{ $title }}
         </h2>
 
-        <div class="download-buttons space-y-4 center">
+        <div class="download-buttons flex flex-col sm:flex-row sm:justify-center sm:gap-8 gap-4">
             @foreach ($links as $link)
                 <x-button href="{{ esc_url($link['url']) }}"
                     variant="{{ $variant === 'light' ? 'primary' : ($variant === 'dark' ? 'primary' : 'secondary') }}"

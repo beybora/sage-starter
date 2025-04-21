@@ -20,8 +20,9 @@
         'lg' => 'px-6 py-3 text-lg',
     ];
 @endphp
-
-<a href="{{ $href }}"
-    class="{{ $base }} {{ $variants[$variant] ?? $variants['primary'] }} {{ $sizes[$size] ?? $sizes['md'] }}">
-    {{ $slot }}
-</a>
+<div>
+    <a href="{{ $href }}"
+        class="{{ $base }} {{ $variants[$variant] ?? $variants['primary'] }} {{ $sizes[$size] ?? $sizes['md'] }}">
+        {{ $slot }}
+    </a>
+</div>
