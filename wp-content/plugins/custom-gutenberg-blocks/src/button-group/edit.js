@@ -12,7 +12,7 @@ import { Fragment } from '@wordpress/element';
 const variantOptions = [
 	{ label: 'Light', value: 'light' },
 	{ label: 'Dark', value: 'dark' },
-	{ label: 'Light Gray', value: 'light-gray' }
+	{ label: 'Light Gray', value: 'light-gray' },
 ];
 
 export default function Edit({ attributes, setAttributes }) {
@@ -38,9 +38,9 @@ export default function Edit({ attributes, setAttributes }) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Block Settings', 'textdomain')}>
+				<PanelBody title={__('Einstellungen', 'custom-gutenberg-blocks')}>
 					<SelectControl
-						label={__('Color Variant', 'textdomain')}
+						label={__('Farbvariante', 'custom-gutenberg-blocks')}
 						value={variant}
 						options={variantOptions}
 						onChange={(val) => setAttributes({ variant: val })}
@@ -48,36 +48,87 @@ export default function Edit({ attributes, setAttributes }) {
 				</PanelBody>
 			</InspectorControls>
 
-			<div {...useBlockProps()}>
+			<div
+				{...useBlockProps({
+					className: 'editor-button-group',
+					style: {
+						border: '1px solid #ccc',
+						backgroundColor: '#fafafa',
+						borderRadius: '0.5rem',
+						padding: '1.5rem',
+						marginBottom: '1.5rem',
+						boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+					},
+				})}
+			>
+				{/* Blocktitel */}
+				<div style={{ fontWeight: 'bold', fontSize: '0.9rem', marginBottom: '1.5rem', color: '#374151' }}>
+					{__('Button Group (Download Links)', 'custom-gutenberg-blocks')}
+				</div>
+
+				{/* Haupttitel */}
 				<PlainText
+					style={{
+						border: '1px solid #ccc',
+						borderRadius: '0.375rem',
+						padding: '0.75rem 1rem',
+						marginBottom: '1.5rem',
+						minHeight: '48px',
+						width: '100%',
+					}}
 					value={title}
 					onChange={(value) => setAttributes({ title: value })}
-					placeholder={__('Enter title...', 'textdomain')}
-					style={{ padding: '1rem', fontSize: '1.5rem' }}
+					placeholder={__('Titel eingeben…', 'custom-gutenberg-blocks')}
 				/>
 
+				{/* Button-Links */}
 				{links.map((link, index) => (
-					<div key={index} style={{ marginBottom: '1rem' }}>
+					<div
+						key={index}
+						style={{
+							backgroundColor: '#fff',
+							border: '1px solid #ddd',
+							borderRadius: '0.5rem',
+							padding: '1rem',
+							marginBottom: '1rem',
+							boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.02)',
+						}}
+					>
 						<PlainText
 							value={link.label}
 							onChange={(value) => updateLink(index, 'label', value)}
-							placeholder={__('Link label...', 'textdomain')}
+							placeholder={__('Button Text (Label)', 'custom-gutenberg-blocks')}
+							style={{
+								border: '1px solid #ccc',
+								borderRadius: '0.375rem',
+								padding: '0.5rem 1rem',
+								marginBottom: '1rem',
+								width: '100%',
+							}}
 						/>
 
-						{/* Media Upload */}
 						<MediaUploadCheck>
 							<MediaUpload
 								onSelect={(media) => updateLink(index, 'url', media.url)}
 								allowedTypes={['application/pdf', 'image', 'audio', 'video']}
 								render={({ open }) => (
 									<Fragment>
-										<Button onClick={open} variant="secondary" style={{ marginTop: '0.5rem' }}>
-											{__('Select File from Media Library', 'textdomain')}
+										<Button
+											onClick={open}
+											variant="secondary"
+											style={{ marginBottom: '0.5rem' }}
+										>
+											{__('Datei auswählen oder ersetzen', 'custom-gutenberg-blocks')}
 										</Button>
 										{link.url && (
-											<p style={{ marginTop: '0.5rem' }}>
-												<a href={link.url} target="_blank" rel="noopener noreferrer">
-													{__('View File', 'textdomain')}
+											<p style={{ marginTop: '0.5rem', fontSize: '0.875rem' }}>
+												<a
+													href={link.url}
+													target="_blank"
+													rel="noopener noreferrer"
+													style={{ textDecoration: 'underline' }}
+												>
+													{__('Datei ansehen', 'custom-gutenberg-blocks')}
 												</a>
 											</p>
 										)}
@@ -86,15 +137,19 @@ export default function Edit({ attributes, setAttributes }) {
 							/>
 						</MediaUploadCheck>
 
-						<Button variant="secondary" onClick={() => removeLink(index)}>
-							{__('Remove Link', 'textdomain')}
+						<Button
+							isDestructive
+							onClick={() => removeLink(index)}
+							style={{ marginTop: '1rem' }}
+						>
+							{__('Diesen Button entfernen', 'custom-gutenberg-blocks')}
 						</Button>
 					</div>
 				))}
 
 				{links.length < 5 && (
 					<Button variant="primary" onClick={addLink}>
-						{__('Add New Link', 'textdomain')}
+						{__('Neuen Button hinzufügen', 'custom-gutenberg-blocks')}
 					</Button>
 				)}
 			</div>
