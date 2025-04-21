@@ -12,7 +12,7 @@
 
 </head>
 
-<body @php(body_class())>
+<body @php(body_class()) x-data="{ open: false }">
     @php(wp_body_open())
 
     <div id="app">

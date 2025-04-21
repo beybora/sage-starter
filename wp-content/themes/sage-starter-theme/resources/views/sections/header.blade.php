@@ -9,7 +9,8 @@
     $ctaUrl = get_theme_mod('header_button_url', '#');
 @endphp
 
-<header class="bg-primary shadow-sm" x-data="{ open: false }">
+{{-- ❗ x-data wandert ins Layout-Wrapper (nicht hier!) --}}
+<header class="bg-primary shadow-sm">
     <div class="header-layout">
         <div class="flex items-center justify-between h-20">
 
@@ -28,17 +29,20 @@
                     {{ $ctaText }}
                 </x-button>
             </div>
+
+            {{-- Burger für Mobile --}}
+            <button @click="open = !open" class="md:hidden text-white focus:outline-none">
+                <span class="block w-6 h-0.5 bg-white mb-1"></span>
+                <span class="block w-6 h-0.5 bg-white mb-1"></span>
+                <span class="block w-6 h-0.5 bg-white"></span>
+            </button>
         </div>
-
-        {{-- Hamburger Button for Mobile --}}
-        <button @click="open = !open" class="md:hidden text-white focus:outline-none">
-            <span class="block w-6 h-0.5 bg-white mb-1"></span>
-            <span class="block w-6 h-0.5 bg-white mb-1"></span>
-            <span class="block w-6 h-0.5 bg-white"></span>
-        </button>
     </div>
-    </div>
-
-    {{-- Mobile Menu --}}
-    @include('partials.mobile-menu', ['menu_items' => $menu_items])
 </header>
+
+{{-- Mobile-Menü wird separat eingebunden – außerhalb vom header, aber innerhalb von x-data! --}}
+@include('partials.mobile-menu', [
+    'menu_items' => $menu_items,
+    'ctaText' => $ctaText,
+    'ctaUrl' => $ctaUrl,
+])
