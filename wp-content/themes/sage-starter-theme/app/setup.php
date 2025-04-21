@@ -83,6 +83,12 @@ add_action('after_setup_theme', function () {
         'footer_navigation' => __('Footer Navigation', 'sage'),
     ]);
 
+
+    register_nav_menus([
+        'footer_secondary' => __('Secondary Footer Navigation', 'sage'),
+    ]);
+
+
     register_nav_menus([
         'social_media_links' => __('Social Media Links', 'sage'),
     ]);
