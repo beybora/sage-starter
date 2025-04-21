@@ -1,20 +1,21 @@
 @php
-    $siteName = get_bloginfo('name');
+    $location = $location ?? 'footer_navigation';
 
     $locations = get_nav_menu_locations();
-    $menu_id = $locations['footer_navigation'] ?? null;
+    $menu_id = $locations[$location] ?? null;
     $menu_items = $menu_id ? wp_get_nav_menu_items($menu_id) : [];
 @endphp
 
-{{-- Menü-Links --}}
-<div class="space-y-2 flex flex-row gap-5">
-    <ul>
-        @foreach ($menu_items as $item)
-            <li>
-                <a href="{{ $item->url }}" class="nav-link text-white hover:text-primary">
-                    {{ $item->title }}
-                </a>
-            </li>
-        @endforeach
-    </ul>
-</div>
+@if (!empty($menu_items))
+    <div>
+        <ul class="space-y-2">
+            @foreach ($menu_items as $item)
+                <li>
+                    <a href="{{ $item->url }}" class="nav-link text-white hover:text-primary transition">
+                        {{ $item->title }}
+                    </a>
+                </li>
+            @endforeach
+        </ul>
+    </div>
+@endif
