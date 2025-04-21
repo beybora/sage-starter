@@ -176,9 +176,22 @@ add_action('widgets_init', function () {
  * @return void
  */
 
-
-
 require_once get_theme_file_path('app/PostTypes/upcoming-event.php');
 require_once get_theme_file_path('app/PostTypes/representatives.php');
 require_once get_theme_file_path('app/PostTypes/press-release.php');
 require_once get_theme_file_path('app/PostTypes/board-members.php');
+
+
+add_filter('block_categories_all', function ($categories, $post) {
+    // Eigene Kategorie
+    $customCategory = [
+        [
+            'slug'  => 'custom-blocks',
+            'title' => __('Unsere Blöcke', 'textdomain'),
+            'icon'  => null,
+        ],
+    ];
+
+    // Eigene Kategorie ganz oben einfügen
+    return array_merge($customCategory, $categories);
+}, 10, 2);
