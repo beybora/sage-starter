@@ -3,9 +3,9 @@
 	"apiVersion": 3,
 	"name": "custom-block/upcoming-events",
 	"title": "Upcoming Events",
-	"category": "theme",
+	"category": "custom-blocks",
 	"icon": "calendar",
-	"description": "Displays a list of upcoming events.",
+	"description": "Section to display upcoming events with a custom headline and subheadline.",
 	"attributes": {
 	  "headline": {
 		"type": "string",

@@ -4,7 +4,7 @@
 	"name": "custom-block/hero",
 	"version": "0.1.0",
 	"title": "Hero Section",
-	"category": "layout",
+	"category": "custom-blocks",
 	"icon": "cover-image",
 	"description": "Flexible Hero Section mit optionalem Bild, Text, Button & Farbvariante.",
 	"keywords": ["hero", "banner", "image", "headline", "cta"],

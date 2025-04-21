@@ -4,7 +4,7 @@
 	"name": "custom-block/image-text-split",
 	"version": "0.1.0",
 	"title": "Image & Text Split",
-	"category": "layout",
+	"category": "custom-blocks",
 	"icon": "align-pull-left",
 	"description": "Zeigt ein Bild auf der linken Seite mit Überschrift, Text und Call-to-Action auf der rechten Seite.",
 	"keywords": ["image", "text", "split", "cta", "layout"],

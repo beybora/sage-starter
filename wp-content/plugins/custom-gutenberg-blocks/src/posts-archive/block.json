@@ -4,9 +4,9 @@
 	"name": "create-block/posts-archive",
 	"version": "0.1.0",
 	"title": "Posts Archive Section",
-	"category": "widgets",
+	"category": "custom-blocks",
 	"icon": "schedule",
-	"description": "Full blog archive section with headline and subheadline. Lists all published posts.",
+	"description": "Sektion um alle Posts eines ausgewählten Types anzuzeigen. Mit optionalem Titel, Subline und Farbvariante.",
 	"attributes": {
 	  "headline": {
 		"type": "string",

@@ -4,9 +4,9 @@
 	"name": "custom-block/pinned-posts",
 	"version": "0.1.0",
 	"title": "Pinned Posts",
-	"category": "widgets",
+	"category": "custom-blocks",
 	"icon": "star-filled",
-	"description": "Pin up to three selected posts to feature on your page.",
+	"description": "Fixierete Posts in einer Sektion. Mit optionalem Titel, Subline und maximaler Anzahl an Posts.",
 	"attributes": {
 	  "pinnedPosts": {
 		"type": "array",

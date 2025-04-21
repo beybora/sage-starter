@@ -4,9 +4,9 @@
 	"name": "create-block/text-list-split",
 	"version": "0.1.0",
 	"title": "Text List Split",
-	"category": "widgets",
-	"icon": "smiley",
-	"description": "Split section with heading + text left, and list of text items right.",
+	"category": "custom-blocks",
+	"icon": "align-pull-left",
+	"description": "Flexible Text List Section mit optionalem Titel, Subline, Liste und Farbvariante.",
 	"attributes": {
 	  "title": { "type": "string", "default": "" },
 	  "subtitle": { "type": "string", "default": "" },

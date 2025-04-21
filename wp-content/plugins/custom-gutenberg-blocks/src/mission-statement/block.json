@@ -4,7 +4,7 @@
 	"name": "custom-block/mission-statement",
 	"version": "0.1.0",
 	"title": "Mission Statement",
-	"category": "layout",
+	"category": "custom-blocks",
 	"icon": "format-quote",
 	"description": "Zentrierte Headline mit optionaler Subline – ideal für Zitate oder Mission Statements.",
 	"keywords": ["mission", "quote", "statement", "zentriert", "center"],

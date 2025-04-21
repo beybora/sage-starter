@@ -4,7 +4,7 @@
 	"name": "custom-block/cards-section",
 	"version": "0.1.0",
 	"title": "Cards Section",
-	"category": "layout",
+	"category": "custom-blocks",
 	"icon": "grid-view",
 	"description": "Zentrierte Headline + Subtitle mit 2–3 Cards darunter. Jede Card hat ein Icon, einen Titel und einen Text.",
 	"keywords": ["cards", "services", "grid", "features"],
