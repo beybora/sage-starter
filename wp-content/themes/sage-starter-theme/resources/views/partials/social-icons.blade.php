@@ -5,7 +5,7 @@
 @endphp
 
 {{-- Social Icons --}}
-<div class="flex gap-5 items-center md:justify-end justify-start" style="gap: 1.25rem;">
+<div class="flex gap-5 items-center md:justify-end justify-center" style="gap: 1.25rem;">
     @foreach ($menu as $item)
         @php
             $title = strtolower($item->title);

@@ -33,7 +33,7 @@
                     @foreach ($item->children as $child)
                         <li>
                             <a href="{{ $child->url }}"
-                                class="block px-4 py-2 no-underline hover:underline hover:bg-gray-100 transition">
+                                class="block px-4 py-2 no-underline hover:underline hover:text-white hover:bg-accent transition">
                                 {{ $child->title }}
                             </a>
                         </li>

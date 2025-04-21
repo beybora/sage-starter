@@ -13,8 +13,15 @@
         </button>
     </div>
 
+
+
+
+    <div class="pl-6 pr-8 pt-4 pb-8">
+        <h4 class="text-white"> CHP Berlin Birligi</h4>
+    </div>
+
     {{-- Menüeinträge --}}
-    <div class="pl-6 pr-8 pt-4 space-y-4">
+    <div class="pl-6 pr-8 pt-4 pb-4 space-y-4">
         @foreach ($menu_items as $item)
             <a href="{{ $item->url }}"
                 class="block text-white text-lg no-underline hover:underline hover:text-accent transition duration-200"
