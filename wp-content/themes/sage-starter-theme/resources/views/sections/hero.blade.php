@@ -24,7 +24,7 @@
 @endphp
 
 <section class="hero {{ $sectionClass }} hero-spacing">
-    <div class="container-layout">
+    <div class="header-layout">
         <div class="grid {{ $hasImage ? 'grid-cols-1 md:grid-cols-2 items-center gap-15' : '' }}">
 
             {{-- Image --}}

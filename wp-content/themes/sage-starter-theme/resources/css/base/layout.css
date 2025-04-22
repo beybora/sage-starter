@@ -1,17 +1,17 @@
 .section-spacing {
-  @apply py-20;
+  @apply py-12 md:py-16 lg:py-20;
 }
 
 .section-spacing-sm {
-  @apply py-10;
+  @apply py-6 md:py-8 lg:py-10;
 }
 
 .hero-spacing {
-  @apply py-30;
+  @apply py-20 md:py-26 lg:py-30;
 }
 
 .container-layout {
-  @apply container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+  @apply container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
 .container-layout-sm {
@@ -19,5 +19,5 @@
 }
 
 .header-layout {
-  @apply container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  @apply container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
 }
