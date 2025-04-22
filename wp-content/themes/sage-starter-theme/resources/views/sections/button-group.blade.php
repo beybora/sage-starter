@@ -19,11 +19,12 @@
             {{ $title }}
         </h2>
 
-        <div class="download-buttons flex flex-col sm:flex-row sm:justify-center sm:gap-8 gap-4">
+        <div class="download-buttons flex flex-col items-center sm:flex-row justify-center sm:gap-8 gap-4">
+
             @foreach ($links as $link)
                 <x-button href="{{ esc_url($link['url']) }}"
                     variant="{{ $variant === 'light' ? 'primary' : ($variant === 'dark' ? 'primary' : 'secondary') }}"
-                    size="lg" download>
+                    size="md" download>
                     {{ esc_html($link['label']) }}
                 </x-button>
             @endforeach
