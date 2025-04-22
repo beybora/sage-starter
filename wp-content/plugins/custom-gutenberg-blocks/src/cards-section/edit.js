@@ -4,7 +4,7 @@ import {
 	PlainText,
 	MediaUpload,
 	MediaUploadCheck,
-	InspectorControls
+	InspectorControls,
 } from '@wordpress/block-editor';
 import { PanelBody, SelectControl, Button } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
@@ -106,16 +106,25 @@ export default function Edit({ attributes, setAttributes }) {
 								render={({ open }) => (
 									<Fragment>
 										{card.icon ? (
-											<img
-												src={card.icon}
-												alt=""
-												style={{
-													width: '60px',
-													height: '60px',
-													objectFit: 'contain',
-													marginBottom: '0.5rem',
-												}}
-											/>
+											<div style={{ marginBottom: '0.5rem' }}>
+												<img
+													src={card.icon}
+													alt=""
+													style={{
+														width: '60px',
+														height: '60px',
+														objectFit: 'contain',
+														marginBottom: '0.5rem',
+													}}
+												/>
+												<Button
+													isDestructive
+													onClick={() => updateCard(index, 'icon', '')}
+													style={{ marginBottom: '0.5rem' }}
+												>
+													{__('Icon entfernen', 'textdomain')}
+												</Button>
+											</div>
 										) : (
 											<div
 												style={{
