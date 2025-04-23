@@ -33,7 +33,7 @@
 
     {{-- CTA unten --}}
     <div class="pl-6 pr-8 pt-8">
-        <x-button href="{{ $ctaUrl }}" variant="secondary" size="md">
+        <x-button href="{{ $ctaUrl }}" variant="secondary" size="sm">
             {{ $ctaText }}
         </x-button>
     </div>

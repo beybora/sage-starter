@@ -25,7 +25,7 @@
             <div class="hidden md:flex items-center gap-5">
                 @include('partials.main-navigation', ['menu_items' => $menu_items])
 
-                <x-button href="{{ $ctaUrl }}" variant="secondary" size="md">
+                <x-button href="{{ $ctaUrl }}" variant="secondary" size="sm">
                     {{ $ctaText }}
                 </x-button>
             </div>
