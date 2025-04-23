@@ -23,6 +23,10 @@
 	  "variant": {
 		"type": "string",
 		"default": "light"
+	  },
+	  "buttonLabel": {
+		"type": "string",
+		"default": "Alle Beiträge"
 	  }
 	},
 	"supports": {

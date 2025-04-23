@@ -19,7 +19,7 @@
     <div class="container-layout">
 
         {{-- Headline & Subheadline --}}
-        <div class="mb-10">
+        <div class="mb-10 text-center">
             @if (!empty($headline))
                 <h2 class="h2 mb-2 {{ $textColor }}">{{ $headline }}</h2>
             @endif
@@ -30,7 +30,7 @@
         </div>
 
         {{-- Grid --}}
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-10">
             @forelse ($latest_posts as $post)
                 @include('components.post-card', [
                     'post' => $post,
@@ -40,6 +40,17 @@
                 <p class="col-span-3 text-muted">{{ __('No posts found.', 'textdomain') }}</p>
             @endforelse
         </div>
+
+        @if (!empty($buttonLabel))
+            <div class="text-center mt-8">
+                @include('components.button', [
+                    'href' => $archive_link,
+                    'variant' => $variant === 'dark' ? 'secondary' : 'primary',
+                    'size' => 'md',
+                    'slot' => $buttonLabel,
+                ])
+            </div>
+        @endif
 
     </div>
 </section>

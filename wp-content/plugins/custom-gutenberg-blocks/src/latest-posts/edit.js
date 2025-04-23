@@ -14,7 +14,9 @@ const variants = [
 ];
 
 export default function Edit({ attributes, setAttributes }) {
-	const { headline, subheadline, postType, variant } = attributes;
+	const { headline, subheadline, postType, variant, buttonLabel } = attributes;
+
+	const archiveLink = postType === 'post' ? '/blog' : `/${postType}`;
 
 	return (
 		<>
@@ -30,17 +32,22 @@ export default function Edit({ attributes, setAttributes }) {
 						value={subheadline}
 						onChange={(val) => setAttributes({ subheadline: val })}
 					/>
+					<TextControl
+						label="Button-Text"
+						value={buttonLabel}
+						onChange={(val) => setAttributes({ buttonLabel: val })}
+					/>
 					<SelectControl
 						label="Post Type"
 						value={postType}
-						options={postTypes}
 						onChange={(val) => setAttributes({ postType: val })}
+						options={postTypes}
 					/>
 					<SelectControl
 						label="Darstellung"
 						value={variant}
-						options={variants}
 						onChange={(val) => setAttributes({ variant: val })}
+						options={variants}
 					/>
 				</PanelBody>
 			</InspectorControls>
@@ -112,6 +119,17 @@ export default function Edit({ attributes, setAttributes }) {
 						/>
 					))}
 				</div>
+
+				{buttonLabel && (
+					<div style={{ marginTop: '2rem', textAlign: 'center' }}>
+						<a
+							href={archiveLink}
+							className="inline-flex items-center justify-center bg-primary text-white hover:bg-[#C2181A] px-4 py-2 h-12 min-w-[180px] font-semibold transition duration-200 text-base no-underline"
+						>
+							{buttonLabel}
+						</a>
+					</div>
+				)}
 			</div>
 		</>
 	);
