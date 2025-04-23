@@ -24,7 +24,6 @@ wp-config.php
 wp-admin
 wp-includes
 
-wp-content/plugins/*
 !wp-content/plugins/custom-gutenberg-blocks/**
 
 # Build cache
