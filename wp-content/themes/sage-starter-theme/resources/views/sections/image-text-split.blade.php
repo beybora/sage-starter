@@ -52,7 +52,7 @@
 
                 @if (!empty($ctaText) && !empty($ctaUrl))
                     <div class="pt-2">
-                        <x-button :href="$ctaUrl" :variant="$buttonVariant" size="lg">
+                        <x-button :href="$ctaUrl" :variant="$buttonVariant" size="md">
                             {{ $ctaText }}
                         </x-button>
                     </div>

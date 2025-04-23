@@ -45,7 +45,7 @@
 
                 @if (!empty($buttonText))
                     <div class="mt-6">
-                        <x-button :href="$buttonUrl" variant="primary" size="lg">
+                        <x-button :href="$buttonUrl" variant="primary" size="md">
                             {{ $buttonText }}
                         </x-button>
                     </div>
