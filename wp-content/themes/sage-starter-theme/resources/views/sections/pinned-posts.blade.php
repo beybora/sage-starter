@@ -36,7 +36,7 @@
                         </svg>
                     </span>
                     <h3 class="h4 mb-2">{{ get_the_title($post) }}</h3>
-                    <p class="paragraph">{{ get_the_excerpt($post) }}</p>
+                    <p class="paragraph">{!! get_the_excerpt($post) !!}</p>
                     <a href="{{ get_permalink($post) }}" class="link mt-4 inline-flex items-center gap-1">
                         Mehr erfahren
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
