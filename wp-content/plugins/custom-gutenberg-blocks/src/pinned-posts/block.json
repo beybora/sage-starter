@@ -1,36 +1,22 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "custom-block/pinned-posts",
-	"version": "0.1.0",
+	"name": "custom-blocks/pinned-posts",
 	"title": "Pinned Posts",
+	"description": "Zwei gepinnte Beiträge aus beliebigen Post Types.",
 	"category": "custom-blocks",
-	"icon": "star-filled",
-	"description": "Fixierete Posts in einer Sektion. Mit optionalem Titel, Subline und maximaler Anzahl an Posts.",
+	"icon": "pinned",
 	"attributes": {
-	  "pinnedPosts": {
-		"type": "array",
-		"default": []
-	  },
-	  "headline": {
-		"type": "string",
-		"default": "Pinned Posts"
-	  },
-	  "subheadline": {
-		"type": "string",
-		"default": ""
-	  },
-	  "maxPosts": {
-		"type": "number",
-		"default": 3
-	  }
+	  "pinnedPost1": { "type": "number", "default": 0 },
+	  "pinnedPost2": { "type": "number", "default": 0 },
+	  "variant": { "type": "string", "default": "light" }
 	},
 	"supports": {
-	  "html": false,
-	  "align": ["wide", "full"]
+	  "html": false
 	},
 	"textdomain": "custom-gutenberg-blocks",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css"
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
   }
