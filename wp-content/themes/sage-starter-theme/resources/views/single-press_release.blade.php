@@ -6,20 +6,20 @@
 
             {{-- Headline (ACF-Feld oder Fallback auf Titel) --}}
             <h1 class="h1 mb-4">
-                {{ get_field('press_title') ?: get_the_title() }}
+                {{ e(get_field('press_title') ?: get_the_title()) }}
             </h1>
 
             {{-- Subheadline --}}
             @if ($subtitle = get_field('press_subtitle'))
                 <p class="paragraph mb-6 text-muted">
-                    {{ $subtitle }}
+                    {{ e($subtitle) }}
                 </p>
             @endif
 
             {{-- Featured Image --}}
             @if (has_post_thumbnail())
                 <div class="mb-8">
-                    {!! get_the_post_thumbnail(null, 'medium', ['class' => 'w-[50%] h-auto ']) !!}
+                    {!! get_the_post_thumbnail(null, 'medium', ['class' => 'w-[50%] h-auto']) !!}
                 </div>
             @endif
 
@@ -29,9 +29,8 @@
                     {!! $text !!}
                 </div>
             @else
-                {{-- Fallback: normaler Content --}}
                 <div class="prose max-w-none text-body">
-                    {!! nl2br(get_the_content()) !!}
+                    {!! nl2br(e(get_the_content())) !!}
                 </div>
             @endif
 
