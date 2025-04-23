@@ -1,23 +1,147 @@
+/*
+|--------------------------------------------------------------------------
+| Layout Utilities
+|--------------------------------------------------------------------------
+|
+| Diese Datei enthält grundlegende Layout-Helferklassen für konsistente
+| Spacing-Abstände (Sections, Hero, etc.) und Container-Breiten.
+| Ziel: Tailwind-unabhängige Klassen, die in allen Build-Modi (dev/build)
+| zuverlässig funktionieren – besonders bei Problemen mit @apply.
+|
+| Enthalten:
+| - section-spacing / section-spacing-sm / hero-spacing
+| - container-layout / container-layout-sm / header-layout
+|
+*/
+
+/* === Section Spacing (Standard) === */
 .section-spacing {
-  @apply py-12 md:py-16 lg:py-20;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
+@media (min-width: 768px) {
+  .section-spacing {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-spacing {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/* === Section Spacing (Kompakt) === */
 .section-spacing-sm {
-  @apply py-6 md:py-8 lg:py-10;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
+@media (min-width: 768px) {
+  .section-spacing-sm {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-spacing-sm {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* === Hero Section Spacing === */
 .hero-spacing {
-  @apply py-20 md:py-26 lg:py-30;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
+@media (min-width: 768px) {
+  .hero-spacing {
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-spacing {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+  }
+}
+
+/* === Layout Container (Standard) === */
 .container-layout {
-  @apply container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  width: 100%;
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
+@media (min-width: 640px) {
+  .container-layout {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-layout {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* === Layout Container (Klein) === */
 .container-layout-sm {
-  @apply container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+  width: 100%;
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
+@media (min-width: 640px) {
+  .container-layout-sm {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-layout-sm {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* === Header Layout === */
 .header-layout {
-  @apply container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+  width: 100%;
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .header-layout {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-layout {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
