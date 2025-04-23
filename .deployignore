@@ -1,45 +1,46 @@
-# Source maps, node stuff, local config
-node_modules/
+# Ignoriere sensible und lokale Umgebungsdateien
 .env
 .env.*
-wp-config-sample.php
-wp-config-local.php
-wp-config.php
 
-# WordPress files and folders
+# Ignoriere Source Maps, Build-Artefakte, Cache
+node_modules/
+vendor/
+public/hot
+*.log
+*.map
+
+# Ignoriere lokale Konfigurationsdateien
+wp-config.php
+wp-config-local.php
+wp-config-sample.php
+
+# WordPress Core & Admin aus Git-Repo ausschließen
 wp-activate.php
 wp-blog-header.php
 wp-comments-post.php
-wp-config-sample.php
 wp-cron.php
 wp-links-opml.php
 wp-load.php
 wp-login.php
 wp-mail.php
-xmlrpc.php
 wp-trackback.php
 wp-signup.php
 wp-settings.php
-wp-config.php
 wp-admin
 wp-includes
 
-!wp-content/plugins/custom-gutenberg-blocks/**
+# Uploads NICHT deployen (aber auch NICHT löschen auf dem Server)
+wp-content/uploads/
 
-# Build cache
-public/hot
-*.log
+# Cache weiterhin ignorieren
+wp-content/cache/*
+wp-content/cache/acorn/
 
-# IDE & OS
+# Gutenberg Block Plugin Build ignorieren
+wp-content/plugins/custom-gutenberg-blocks/build/
+
+# Tests & Tools
+phpunit.xml
 .DS_Store
 .idea/
 .vscode/
-
-# Dev-Tools & Tests
-phpunit.xml
-
-# Git & CI/CD intern
-.git
-.gitignore
-.github/
-.deployignore
